@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portfolio_tplus client="код клиента">
+<coverage_fact>123.36</coverage_fact>
+<coverage_plan>123.36</coverage_plan>
+<coverage_crit>123.36</coverage_crit>
+<open_equity>123.36</open_equity>
+<equity>123.36</equity>
+<cover>123.36</cover>
+<init_margin>123.36</init_margin>
+<pnl_income>123.36</pnl_income>
+<pnl_intraday>123.36</pnl_intraday>
+<leverage>123.36</leverage>
+<margin_level>123.36</margin_level>
+<money>
+        <open_balance>123.36</open_balance>
+        <bought>123.36</bought>
+        <sold>123.36</sold>
+        <settled>123.36</settled>
+        <balance>123.36</balance>
+        <tax>123.36</tax>
+        <value_part register="регистр учёта">
+            <open_balance>123.36</open_balance>
+            <bought>123.36</bought>
+            <sold>123.36</sold>
+            <settled>123.36</settled>
+            <balance>123.36</balance>
+        </value_part>
+        <value_part register="регистр учёта">
+            <open_balance>123.36</open_balance>
+            <bought>123.36</bought>
+            <sold>123.36</sold>
+            <settled>123.36</settled>
+            <balance>123.36</balance>
+        </value_part>
+        <value_part register="регистр учёта">
+            <open_balance>123.36</open_balance>
+            <bought>123.36</bought>
+            <sold>123.36</sold>
+            <settled>123.36</settled>
+            <balance>123.36</balance>
+        </value_part>
+</money>
+<security secid="123">
+        <market>123</market>
+        <seccode>"обозначение инструмента"</seccode>
+        <price>123.36</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>123.36</balance_prc>
+        <unrealized_pnl>123.36</unrealized_pnl>
+        <buying>123</buying>
+        <selling>123</selling>
+        <cover>123.36</cover>
+        <init_margin>123.36</init_margin>
+        <riskrate_long>123.36</riskrate_long>
+        <riskrate_short>123.36</riskrate_short>
+        <pnl_income>123.36</pnl_income>
+        <pnl_intraday>123.36</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>123</maxsell>
+        <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+         <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+</security>
+<security secid="123">
+        <market>123</market>
+        <seccode>"обозначение инструмента"</seccode>
+        <price>123.36</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>123.36</balance_prc>
+        <unrealized_pnl>123.36</unrealized_pnl>
+        <buying>123</buying>
+        <selling>123</selling>
+        <cover>123.36</cover>
+        <init_margin>123.36</init_margin>
+        <riskrate_long>123.36</riskrate_long>
+        <riskrate_short>123.36</riskrate_short>
+        <pnl_income>123.36</pnl_income>
+        <pnl_intraday>123.36</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>123</maxsell>
+        <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+         <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+</security>
+<security secid="123">
+        <market>123</market>
+        <seccode>"обозначение инструмента"</seccode>
+        <price>123.36</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>123.36</balance_prc>
+        <unrealized_pnl>123.36</unrealized_pnl>
+        <buying>123</buying>
+        <selling>123</selling>
+        <cover>123.36</cover>
+        <init_margin>123.36</init_margin>
+        <riskrate_long>123.36</riskrate_long>
+        <riskrate_short>123.36</riskrate_short>
+        <pnl_income>123.36</pnl_income>
+        <pnl_intraday>123.36</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>123</maxsell>
+        <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+         <value_part register="регистр учёта">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+</security>
+</portfolio_tplus>
+
+

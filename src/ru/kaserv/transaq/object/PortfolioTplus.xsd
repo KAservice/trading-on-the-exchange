@@ -1,0 +1,84 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="portfolio_tplus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:decimal" name="coverage_fact"/>
+        <xs:element type="xs:decimal" name="coverage_plan"/>
+        <xs:element type="xs:decimal" name="coverage_crit"/>
+        <xs:element type="xs:decimal" name="open_equity"/>
+        <xs:element type="xs:decimal" name="equity"/>
+        <xs:element type="xs:decimal" name="cover"/>
+        <xs:element type="xs:decimal" name="init_margin"/>
+        <xs:element type="xs:decimal" name="pnl_income"/>
+        <xs:element type="xs:decimal" name="pnl_intraday"/>
+        <xs:element type="xs:decimal" name="leverage"/>
+        <xs:element type="xs:decimal" name="margin_level"/>
+        <xs:element name="money">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:decimal" name="open_balance"/>
+              <xs:element type="xs:decimal" name="bought"/>
+              <xs:element type="xs:decimal" name="sold"/>
+              <xs:element type="xs:decimal" name="settled"/>
+              <xs:element type="xs:decimal" name="balance"/>
+              <xs:element type="xs:decimal" name="tax"/>
+              <xs:element name="value_part" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:decimal" name="open_balance"/>
+                    <xs:element type="xs:decimal" name="bought"/>
+                    <xs:element type="xs:decimal" name="sold"/>
+                    <xs:element type="xs:decimal" name="settled"/>
+                    <xs:element type="xs:decimal" name="balance"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="register" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="security" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="market"/>
+              <xs:element type="xs:string" name="seccode"/>
+              <xs:element type="xs:decimal" name="price"/>
+              <xs:element type="xs:int" name="open_balance"/>
+              <xs:element type="xs:int" name="bought"/>
+              <xs:element type="xs:int" name="sold"/>
+              <xs:element type="xs:int" name="balance"/>
+              <xs:element type="xs:decimal" name="balance_prc"/>
+              <xs:element type="xs:decimal" name="unrealized_pnl"/>
+              <xs:element type="xs:int" name="buying"/>
+              <xs:element type="xs:int" name="selling"/>
+              <xs:element type="xs:decimal" name="cover"/>
+              <xs:element type="xs:decimal" name="init_margin"/>
+              <xs:element type="xs:decimal" name="riskrate_long"/>
+              <xs:element type="xs:decimal" name="riskrate_short"/>
+              <xs:element type="xs:decimal" name="pnl_income"/>
+              <xs:element type="xs:decimal" name="pnl_intraday"/>
+              <xs:element type="xs:int" name="maxbuy"/>
+              <xs:element type="xs:int" name="maxsell"/>
+              <xs:element name="value_part" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="open_balance"/>
+                    <xs:element type="xs:int" name="bought"/>
+                    <xs:element type="xs:int" name="sold"/>
+                    <xs:element type="xs:int" name="settled"/>
+                    <xs:element type="xs:int" name="balance"/>
+                    <xs:element type="xs:int" name="buying"/>
+                    <xs:element type="xs:int" name="selling"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="register" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="secid" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="client"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

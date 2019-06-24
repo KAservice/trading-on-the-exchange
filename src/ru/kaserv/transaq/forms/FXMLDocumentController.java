@@ -1,0 +1,971 @@
+package ru.kaserv.transaq.forms;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import ru.kaserv.transaq.command.CommandBuilder;
+import ru.kaserv.transaq.configuration.ClientForTradesOrders;
+import ru.kaserv.transaq.configuration.ClientsForTradesOrders;
+import ru.kaserv.transaq.configuration.RemnantOfSecurities;
+import ru.kaserv.transaq.configuration.RemnantOfSecuritiesBuilder;
+import ru.kaserv.transaq.configuration.SecurityForTradesOrders;
+import ru.kaserv.transaq.configuration.StorageConfig;
+import ru.kaserv.transaq.object.Trades;
+import transaq.TransaqConnector;
+import transaq.TransaqHandler;
+import transaq.TransaqQueue;
+
+/**
+ *
+ * @author 1
+ */
+public class FXMLDocumentController implements Initializable {
+    
+    @FXML
+    private Label label;
+    @FXML
+    private Button button;
+    @FXML
+    private Button buttonUnInitialize;
+    
+    private TransaqQueue queue = new TransaqQueue();
+    
+    private TransaqConnector transaqConnector;
+    private TransaqHandler transaqHandler;
+    Thread consumer;
+    
+    StorageConfig storageConfig = new StorageConfig();
+    
+    
+/*    ObservableList<Quotations.Quotation> quotationObList = FXCollections.observableArrayList();
+    ObservableList<Quotes.Quote> quoteObList = FXCollections.observableArrayList();
+    
+      
+
+    
+    PortfolioTplus currencyPortfolioTplus = new PortfolioTplus();
+    
+
+   
+ 
+    
+    @FXML
+    TableView candlekindTableView;
+    @FXML
+    private TableColumn<Candlekinds.Kind, String> columnCandlekindTableViewId;
+    @FXML
+    private TableColumn<Candlekinds.Kind, String> columnCandlekindTableViewPeriod;  
+    @FXML
+    private TableColumn<Candlekinds.Kind, String> columnCandlekindTableViewName;   
+  
+    
+    
+    @FXML
+    TableView quotationTableView;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewBoard;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewSeccode;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewPointCost;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewTradingStatus;    
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewLast;     
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewQuantity;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewTime;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewChange;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewPriceminusprevwaprice;    
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewBid; 
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewBiddepth;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewBiddeptht;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewNumbids;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewOffer;    
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewOfferdepth;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewOfferdeptht;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewNumoffers;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewOpen;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewHigh;    
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewLow;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewVoltoday;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewNumtrades;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewValtoday;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewOpenposition;    
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewDeltapositions;  
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewWaprice;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewCloseprice;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewMarketpricetoday;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewLcurrentprice;    
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewBuydeposit;
+    @FXML
+    private TableColumn<Quotations.Quotation, String> columnQuotationTableViewSelldeposit;
+ 
+    
+
+    
+    
+    @FXML
+    TableView quoteTableView;
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewBoard;
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewSeccode;
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewPrice;
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewYield;      
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewSell;
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewBuy;
+    @FXML
+    private TableColumn<Quotes.Quote, String> columnQuoteTableViewSecId;    
+    
+    
+
+
+    
+    
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderActiveorderno;    
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderSecid;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderBoard;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderSeccode;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderClient;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderBuysell;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderCanceller;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderAlltradeno;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderValidbefore;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderAuthor;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderAccepttime;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderLinkedorderno;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderExpdate;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStatus;
+    
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStoplossActivationprice;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStoplossGuardtime;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStoplossBrokerref;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStoplossQuantity;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStoplossOrderprice;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderStoplossUsecredit;
+
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitActivationprice;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitGuardtime;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitBrokerref;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitQuantity;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitExtremum;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitLevel;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitCorrection;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTakeprofitGuardspread;
+
+    
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderWithdrawtime;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderResult;
+    @FXML
+    private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTransactionid;   */
+    
+
+    @FXML
+    private void handleButtonLoadDllAction(ActionEvent event) {   
+    JNICallTest();   
+        
+    
+    Object blockObject = new Object();
+    
+    
+    
+    transaqConnector = new TransaqConnector();
+    transaqConnector.LoadDllTransaq();
+    transaqConnector.SetCallback();
+    transaqConnector.setQueue(queue);
+    transaqConnector.setBlockObject(blockObject);
+    String logPath="K:\\DLL\\Transaq\\Output\\Log\\"; 
+    
+    byte[] b=logPath.getBytes();
+    transaqConnector.Initialize(b, 3);
+    
+    
+    
+    
+    
+        
+        transaqHandler = new TransaqHandler();
+        transaqHandler.setBlockObject(blockObject);
+        consumer = new Thread(transaqHandler);
+        transaqHandler.setQueue(queue);
+        consumer.setName("Consumer");
+        System.out.println("Запусаем поток, текущий поток:" + Thread.currentThread().getName()); 
+
+        
+        
+      /*  transaqHandler.boardObList = boardObList;
+        transaqHandler.candlekindObList = candlekindObList;
+        transaqHandler.quotationObList = quotationObList;
+        transaqHandler.quoteObList = quoteObList;*/
+//        transaqHandler.alltradeObList = alltradeObList;    
+ 
+//        transaqHandler.tradeObList = tradeObList; 
+//        transaqHandler.orderObList = orderObList; 
+        consumer.start();
+    
+    
+    
+    
+    }
+    
+    @FXML
+    private void handleButtonUnLoadDllAction(ActionEvent event) {    
+        
+    transaqConnector.UnLoadDllTransaq();
+    
+    }    
+    
+    
+    @FXML
+    private void handleButtonInitializeAction(ActionEvent event) {     
+
+ 
+    }
+    
+    @FXML
+    private void handleButtonUnInitializeAction(ActionEvent event) {   
+
+    transaqConnector.UnInitialize();
+    saveBalance();
+    }
+    
+    @FXML
+    private void handleButtonSetCallbackAction(ActionEvent event) {   
+
+    consumer.interrupt();
+    
+    
+    }
+    
+    @FXML
+    private void handleButtonConnectAction(ActionEvent event) {   
+
+    String z;
+
+//FZTC9650A  eBu5rDn2 tr1.finam.ru 3900   
+
+//TCNN9989 Q2S2q9 tr1-demo5.finam.ru 3939
+
+
+    System.out.println("Выполняем команду, текущий поток:" + Thread.currentThread().getName());     
+        
+    z= "	<command id=\"connect\">                                                        "+
+				"<login>FZTC9650A</login>                                                "+
+				"<password>eBu5rDn2</password>                                    "+
+				"<host>tr1.finam.ru</host>                                            "+
+				"<port>3900</port>                                              "+
+				"<language>ru</language>                                        "+
+				"<autopos>false</autopos>                                        "+
+				"<micex_registers>true</micex_registers>                        "+
+				"<milliseconds>true</milliseconds>                              "+
+				"<utc_time>true</utc_time>                                      "+
+				"<rqdelay>100</rqdelay>                         "+
+				"<session_timeout>25</session_timeout>       "+
+				"<request_timeout>10                       "+
+				"</request_timeout>                                                    "+
+				"<push_u_limits>10</push_u_limits>                      "+
+				"<push_pos_equity>10</push_pos_equity>                  "+
+				"</command>     ";
+    byte[] b=z.getBytes();
+    transaqConnector.SendCommand(b);
+    
+    }
+    
+    @FXML
+    private void handleButtonDisconnectAction(ActionEvent event) {   
+
+    String z=	"<command id=\"disconnect\"/>";
+
+    byte[] b=z.getBytes();
+    transaqConnector.SendCommand(b); 
+    
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    /*    columnShortName.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("shortname"));
+        columnSecTz.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("secTz"));    
+        columnSeccode.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("seccode"));      
+        columnBoard.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("board"));    
+        columnDecimals.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("decimals"));    
+        columnMarket.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("market"));       
+        columnSectype.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("sectype"));     
+        columnMinstep.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("minstep"));    
+        columnlotsize.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("lotsize"));       
+        columnPointCost.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("pointCost"));    
+        columnQuotestype.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("quotestype"));     
+        columnSecid.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("secid"));      
+        columnActive.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("active"));       
+        securityTableView.setItems(storageConfig.getSecuritiesConfig().getSecuritiesStorage().getObservableList());
+        
+        
+        columnBoardTableViewName.setCellValueFactory(new PropertyValueFactory<Boards.Board, String>("name"));
+        columnBoardTableViewMarket.setCellValueFactory(new PropertyValueFactory<Boards.Board, String>("market"));
+        columnBoardTableViewType.setCellValueFactory(new PropertyValueFactory<Boards.Board, String>("type"));
+        columnBoardTableViewId.setCellValueFactory(new PropertyValueFactory<Boards.Board, String>("id"));      
+        boardTableView.setItems(boardObList);
+        
+        
+        
+        columnCandlekindTableViewId.setCellValueFactory(new PropertyValueFactory<Candlekinds.Kind, String>("id"));
+        columnCandlekindTableViewPeriod.setCellValueFactory(new PropertyValueFactory<Candlekinds.Kind, String>("period"));
+        columnCandlekindTableViewName.setCellValueFactory(new PropertyValueFactory<Candlekinds.Kind, String>("name"));
+        candlekindTableView.setItems(candlekindObList);    
+        
+        
+        columnQuotationTableViewBoard.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("board"));
+        columnQuotationTableViewSeccode.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("seccode"));
+        columnQuotationTableViewPointCost.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("pointCost"));
+        columnQuotationTableViewTradingStatus.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("tradingstatus"));                
+        columnQuotationTableViewLast.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("last"));
+        columnQuotationTableViewQuantity.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("quantity"));
+        columnQuotationTableViewTime.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("time"));
+        columnQuotationTableViewChange.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("change"));                    
+        columnQuotationTableViewPriceminusprevwaprice.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("priceminusprevwaprice"));
+        columnQuotationTableViewBid.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("bid"));
+        columnQuotationTableViewBiddepth.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("biddepth"));
+        columnQuotationTableViewBiddeptht.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("biddeptht"));                  
+        columnQuotationTableViewNumbids.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("numbids"));
+        columnQuotationTableViewOffer.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("offer"));
+        columnQuotationTableViewOfferdepth.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("offerdepthost"));
+        columnQuotationTableViewOfferdeptht.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("offerdeptht"));                        
+        columnQuotationTableViewNumoffers.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("numoffers"));
+        columnQuotationTableViewOpen.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("open"));
+        columnQuotationTableViewHigh.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("high"));
+        columnQuotationTableViewLow.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("low"));                  
+        columnQuotationTableViewVoltoday.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("voltoday"));
+        columnQuotationTableViewNumtrades.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("numtrades"));
+        columnQuotationTableViewValtoday.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("valtoday"));
+        columnQuotationTableViewOpenposition.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("openposition"));           
+        columnQuotationTableViewDeltapositions.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("deltapositions"));
+        columnQuotationTableViewWaprice.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("waprice"));
+        columnQuotationTableViewCloseprice.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("closeprice"));
+        columnQuotationTableViewMarketpricetoday.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("marketpricetoday"));        
+        columnQuotationTableViewLcurrentprice.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("lcurrentprice"));
+        columnQuotationTableViewBuydeposit.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("buydeposit"));
+        columnQuotationTableViewSelldeposit.setCellValueFactory(new PropertyValueFactory<Quotations.Quotation, String>("selldeposit")); 
+        quotationTableView.setItems(quotationObList);  
+        
+        
+        columnQuoteTableViewBoard.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("board"));
+        columnQuoteTableViewSeccode.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("seccode"));
+        columnQuoteTableViewPrice.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("price"));
+        columnQuoteTableViewYield.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("yield"));
+        columnQuoteTableViewSell.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("sell"));
+        columnQuoteTableViewBuy.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("buy"));
+        columnQuoteTableViewSecId.setCellValueFactory(new PropertyValueFactory<Quotes.Quote, String>("secid"));
+        quoteTableView.setItems(quoteObList); 
+        
+        
+        columnAllTradeTableViewTradeNo.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("tradeno"));
+        columnAllTradeTableViewBoard.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("board"));
+        columnAllTradeTableViewTime.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("time"));
+        columnAllTradeTableViewPrice.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("price"));
+        columnAllTradeTableViewQuantity.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("quantity"));
+        columnAllTradeTableViewBuysell.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("buysell"));
+        columnAllTradeTableViewOpeninterest.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("openinterest"));               
+        columnAllTradeTableViewSeccode.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("seccode"));
+        columnAllTradeTableViewPeriod.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("period"));
+        columnAllTradeTableViewSecid.setCellValueFactory(new PropertyValueFactory<Alltrades.Trade, String>("secid"));
+        allTradeTableView.setItems(alltradeObList);      
+        
+        
+        columnClientTableViewMarket.setCellValueFactory(new PropertyValueFactory<Client, String>("market"));    
+        columnClientTableViewCurrency.setCellValueFactory(new PropertyValueFactory<Client, String>("currency"));        
+        columnClientTableViewType.setCellValueFactory(new PropertyValueFactory<Client, String>("type")); 
+        columnClientTableViewId.setCellValueFactory(new PropertyValueFactory<Client, String>("id")); 
+        columnClientTableViewRemove.setCellValueFactory(new PropertyValueFactory<Client, String>("remove")); 
+        clientTableView.setItems(storageConfig.getClientsStorageConfig().getClientsStorage().getObservableList());
+        
+            
+    
+        columnTradeTableViewSecid.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("secid"));    
+        columnTradeTableViewTradeno.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("tradeno"));        
+        columnTradeTableViewOrderno.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("orderno")); 
+        columnTradeTableViewBoard.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("board")); 
+        columnTradeTableViewSeccode.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("seccode")); 
+        columnTradeTableViewClient.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("client"));        
+        columnTradeTableViewBuysell.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("buysell")); 
+        columnTradeTableViewUnion.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("union")); 
+        columnTradeTableViewTime.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("time"));
+        columnTradeTableViewBrokerref.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("brokerref"));
+        columnTradeTableViewValue.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("value"));
+        columnTradeTableViewComission.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("comission"));
+        columnTradeTableViewPrice.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("price"));
+        columnTradeTableViewItems.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("items"));
+        columnTradeTableViewQuantity.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("quantity"));
+        columnTradeTableViewYield.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("yield"));
+        columnTradeTableViewAccruedint.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("accruedint"));
+        columnTradeTableViewTradetype.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("tradetype"));
+        columnTradeTableViewSettlecode.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("settlecode"));
+        columnTradeTableViewCurrentpos.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("currentpos"));
+        tradeTableView.setItems(tradeObList); 
+        
+        
+ 
+    
+        
+       
+   
+        columnOrderTableViewOrderno.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("orderno"));  
+        columnOrderTableViewSecid.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("secid"));  
+        columnOrderTableViewBoard.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("board"));
+        columnOrderTableViewSeccode.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("seccode"));
+        columnOrderTableViewClient.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("client"));
+        columnOrderTableViewUnion.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("union"));
+        columnOrderTableViewStatus.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("status"));
+        columnOrderTableViewBuysell.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("buysell"));
+        columnOrderTableViewTime.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("time"));
+        columnOrderTableViewExpdate.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("expdate"));
+        columnOrderTableViewOrigin_orderno.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("origin_orderno"));
+        columnOrderTableViewAccepttime.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("accepttime"));
+        columnOrderTableViewBrokerref.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("brokerref"));
+        columnOrderTableViewValue.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("value"));
+        columnOrderTableViewAccruedint.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("accruedint"));
+        columnOrderTableViewSettlecode.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("settlecode"));
+        columnOrderTableViewBalance.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("balance"));
+        columnOrderTableViewPrice.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("price"));
+        columnOrderTableViewQuantity.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("quantity"));
+        columnOrderTableViewHidden.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("hidden"));
+        columnOrderTableViewYield.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("yield"));
+        columnOrderTableViewWithdrawtime.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("withdrawtime"));
+        columnOrderTableViewCondition.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("condition"));
+        columnOrderTableViewConditionvalue.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("conditionvalue"));
+        columnOrderTableViewValidafter.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("validafter"));
+        columnOrderTableViewValidbefore.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("validbefore"));
+        columnOrderTableViewMaxcomission.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("maxcomission"));
+        columnOrderTableViewResult.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("result"));
+        columnOrderTableViewTransactionid.setCellValueFactory(new PropertyValueFactory<Orders.Order, String>("transactionid"));
+        orderTableView.setItems(orderObList);*/
+   
+    //этих полей нет поэтому NullPointerExeption!!!
+   /**     columnOrderTableViewStoporderActiveorderno.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("activeorderno"));
+        columnOrderTableViewStoporderSecid.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("secid"));
+        columnOrderTableViewStoporderBoard.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("board"));
+        columnOrderTableViewStoporderSeccode.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("seccode"));
+        columnOrderTableViewStoporderClient.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("client"));
+        columnOrderTableViewStoporderBuysell.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("buysell"));
+        columnOrderTableViewStoporderCanceller.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("canceller"));
+        columnOrderTableViewStoporderAlltradeno.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("alltradeno"));
+        columnOrderTableViewStoporderValidbefore.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("validbefore"));
+        columnOrderTableViewStoporderAuthor.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("author"));
+        columnOrderTableViewStoporderAccepttime.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("accepttime"));
+        columnOrderTableViewStoporderLinkedorderno.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("linkedorderno"));
+        columnOrderTableViewStoporderExpdate.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("expdate"));
+        columnOrderTableViewStoporderStatus.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("status"));
+        columnOrderTableViewStoporderStoplossActivationprice.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("activationprice"));
+        columnOrderTableViewStoporderStoplossGuardtime.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("guardtime"));
+        columnOrderTableViewStoporderStoplossBrokerref.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("brokerref"));
+        columnOrderTableViewStoporderStoplossQuantity.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("quantity"));
+        columnOrderTableViewStoporderStoplossOrderprice.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("orderprice"));
+        columnOrderTableViewStoporderStoplossUsecredit.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("usecredit"));
+        columnOrderTableViewStoporderTakeprofitActivationprice.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("activationprice"));
+        columnOrderTableViewStoporderTakeprofitGuardtime.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("guardtime"));
+        columnOrderTableViewStoporderTakeprofitBrokerref.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("brokerref"));
+        columnOrderTableViewStoporderTakeprofitQuantity.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("quantity"));
+        columnOrderTableViewStoporderTakeprofitExtremum.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("extremum"));
+        columnOrderTableViewStoporderTakeprofitLevel.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("level"));
+        columnOrderTableViewStoporderTakeprofitCorrection.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("correction"));
+        columnOrderTableViewStoporderTakeprofitGuardspread.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("guardspread"));
+        columnOrderTableViewStoporderWithdrawtime.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("withdrawtime"));
+        columnOrderTableViewStoporderResult.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("result"));
+        columnOrderTableViewStoporderTransactionid.setCellValueFactory(new PropertyValueFactory<Orders.Stoporder, String>("transactionid"));**/
+
+
+                 
+        
+        
+    }  
+    
+    
+        public static void JNICallTest()
+            {
+            File file = new File("K://DLL//Transaq//Output//kasTXmlConnector.dll");
+            if (file.exists()) {
+                    try {
+                    String path = file.getAbsolutePath();
+                    int idx = path.indexOf(File.separatorChar
+                    + "kasTXmlConnector.dll");
+                    path = path.substring(0, idx);
+                    addLibraryPath(path);
+
+                    } catch (Exception e1) {
+                    e1.printStackTrace();
+                    }
+            } else {
+            System.out.println("DLL NOT EXISTS");
+            }
+            }
+    
+    public static void addLibraryPath(String pathToAdd) throws Exception
+        {
+        Field usrPathsField;
+        usrPathsField = ClassLoader.class.getDeclaredField("usr_paths");
+        usrPathsField.setAccessible(true);
+        // get array of paths
+        final String[] paths = (String[])usrPathsField.get(null);
+        // check if the path to add is already present
+        for (String path : paths) {
+        if(path.equals(pathToAdd)) {
+        return;
+        }
+        }
+        // add the new path
+        String[] newPaths = Arrays.copyOf(paths, paths.length + 1);
+        newPaths[newPaths.length-1] = pathToAdd;
+        usrPathsField.set(null, newPaths);
+        }
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    
+    
+    
+    
+    
+    @FXML
+    private void handleButtonSubscribeAction(ActionEvent event) { 
+         String z;
+
+//BRK9   
+    
+    
+            z="<command id=\"subscribe\">"+
+                    
+                "<alltrades>"+
+                "<security>"+
+                "<board>FUT</board>"+
+                "<seccode>BRN9</seccode>"+
+                "</security>"+
+                "</alltrades>"+
+                                        
+
+                "</command>";
+    byte[] b=z.getBytes();
+    transaqConnector.SendCommand(b);   
+    }
+    
+    
+        @FXML
+    private void handleButtonUnSubscribeAction(ActionEvent event) { 
+         String z;
+
+
+    
+    
+            z="<command id=\"unsubscribe\">"+
+                    
+                "<alltrades>"+
+                "<security>"+
+                "<board>FUT</board>"+
+                "<seccode>BRN9</seccode>"+
+                "</security>"+
+                "</alltrades>"+
+                    
+
+                    
+
+                "</command>";
+    byte[] b=z.getBytes();
+    transaqConnector.SendCommand(b);   
+    }
+    
+    
+    @FXML
+    private void handleButtonGetHistoryDataAction(ActionEvent event) { 
+         String z;    
+            z="    <command id=\"gethistorydata\">"+
+                "<security>"+
+                "<board>FUT</board>"+
+                "<seccode>BRM9</seccode>"+
+                "</security>"+
+                "<period>2</period>"+
+                "<count>20</count>"+
+                "<reset>true</reset>"+
+                "</command>";
+                    
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b);
+
+        }
+    
+    
+    @FXML
+    private void handleButtonGetPortfolioAction(ActionEvent event) { 
+         String z;
+         
+            z="<command id=\"get_portfolio\" client=\"virt/9989\"/>";//12E19/12E19
+            
+                    
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b);
+
+        }
+    
+    @FXML
+    private void handleButtonGetMaxBuySellTplusAction(ActionEvent event) { 
+         String z;
+         
+            z="<command id=\"get_max_buy_sell_tplus\" client=\"код клиента\">\n" +
+                    "<security>\n" +
+                    "<market>Внутренний код рынка</market>\n" +
+                    "<seccode>BRM9</seccode>\n" +
+                    "</security>\n" +
+                    "</command>";
+            
+                    
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b);
+        }
+    
+    
+    @FXML
+    private void handleButtonGetgetUnitedEquityAction(ActionEvent event) { 
+         String z;
+         
+            z="<command id=\"get_united_portfolio\" client=\"код клиента\" union=\"код юниона\" />";            
+                    
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b);
+        }    
+    
+    
+    @FXML
+    private void handleButtonGetUnitedPortfolioAction(ActionEvent event) { 
+         String z;
+         
+            z="<command id=\"get_united_equity\" union=\"код юниона\" />";            
+                    
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b);
+        }     
+    
+    @FXML
+    private void handleButtonGetUnitedGoAction(ActionEvent event) { 
+         String z;
+         
+            z="<command id=\"get_united_go\" union=\"код юниона\" />";            
+                    
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b);
+        }     
+    
+    
+    @FXML
+    private void handleMainMenuOpenTableClientsForTradesOrders(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();    
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("ClientsTableForTradesOrders.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }
+
+    @FXML
+    private void handleMainMenuOpenTableSecuritiesForAllTrades(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();    
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("SecuritiesForAllTrades.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }
+    
+    @FXML
+    private void handleMainMenuOpenTableClients(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();    
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("Clients.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }
+    
+    @FXML
+    private void handleMainMenuOpenTableSecurities(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();    
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("Securities.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }    
+    
+    @FXML
+    private void handleMainMenuConnectToServer(ActionEvent event) { 
+               
+    JNICallTest();   
+        
+    
+    Object blockObject = new Object();
+    
+    
+    
+    transaqConnector = new TransaqConnector();
+    transaqConnector.LoadDllTransaq();
+    transaqConnector.SetCallback();
+    transaqConnector.setQueue(queue);
+    transaqConnector.setBlockObject(blockObject);
+    String logPath="K:\\DLL\\Transaq\\Output\\Log\\"; 
+    
+    byte[] b=logPath.getBytes();
+    transaqConnector.Initialize(b, 3);
+    
+    
+    
+    
+    
+        
+        transaqHandler = new TransaqHandler();
+        transaqHandler.setBlockObject(blockObject);
+        consumer = new Thread(transaqHandler);
+        transaqHandler.setQueue(queue);
+        consumer.setName("Consumer");
+        System.out.println("Запусаем поток, текущий поток:" + Thread.currentThread().getName()); 
+
+
+        consumer.start();
+        
+        
+        
+            String z;
+
+//FZTC9650A  eBu5rDn2 tr1.finam.ru 3900   
+
+//TCNN9989 Q2S2q9 tr1-demo5.finam.ru 3939
+
+
+    System.out.println("Выполняем команду, текущий поток:" + Thread.currentThread().getName());     
+        
+    z= "	<command id=\"connect\">                                                        "+
+				"<login>FZTC9650A</login>                                                "+
+				"<password>eBu5rDn2</password>                                    "+
+				"<host>tr1.finam.ru</host>                                            "+
+				"<port>3900</port>                                              "+
+				"<language>ru</language>                                        "+
+				"<autopos>false</autopos>                                        "+
+				"<micex_registers>true</micex_registers>                        "+
+				"<milliseconds>true</milliseconds>                              "+
+				"<utc_time>true</utc_time>                                      "+
+				"<rqdelay>100</rqdelay>                         "+
+				"<session_timeout>25</session_timeout>       "+
+				"<request_timeout>10                       "+
+				"</request_timeout>                                                    "+
+				"<push_u_limits>10</push_u_limits>                      "+
+				"<push_pos_equity>10</push_pos_equity>                  "+
+				"</command>     ";
+    
+    CommandBuilder cb = new CommandBuilder();
+    String command = cb.createCommandConnect();
+    System.out.println(command); 
+    byte[] b2=command.getBytes();
+    transaqConnector.SendCommand(b2);
+    
+    
+    //после этого должны получить асинхронный ответ connect  
+    
+    }
+    
+    
+    @FXML
+    private void handleMainMenuDisconnectServer(ActionEvent event) { 
+        
+        String z=	"<command id=\"disconnect\"/>";
+
+    byte[] b=z.getBytes();
+    transaqConnector.SendCommand(b); 
+
+//после этого должны получить асинхронный ответ disconnect    
+        
+    }
+    
+    
+    @FXML
+    private void handleMainMenuOpenConfigConnect(ActionEvent event) {     
+        
+        Stage newWindow = new Stage();    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ConnectConfigForm.fxml"));
+        Parent root = null;
+   
+            try {
+                root = loader.load();        
+            }
+            catch (IOException err){
+                
+                System.out.println("ошибка " + err);
+                err.printStackTrace();
+            }  
+
+        ConnectConfigFormController connectConfigFormController = loader.<ConnectConfigFormController>getController();
+        connectConfigFormController.loadConnectConfig();
+        
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+   
+    }
+    
+    
+    private void saveBalance(){
+        
+        
+        
+    StorageConfig storageConfig = StorageConfig.getStorageConfig();
+    ClientsForTradesOrders clientsConfig = storageConfig.getClientsForTradesOrders();
+    
+    Collection<ClientForTradesOrders> clients = clientsConfig.getElements();
+
+    //ClientForTradesOrders result = null;
+
+        RemnantOfSecuritiesBuilder builder = new RemnantOfSecuritiesBuilder();
+        RemnantOfSecurities remnants =  builder.load();
+        
+        if (remnants == null){            
+            remnants = new RemnantOfSecurities();
+        }
+
+        
+        for(ClientForTradesOrders cl : clients){
+            
+                       
+            Collection<SecurityForTradesOrders> secirities = cl.getSecuritiesForTradesOrders();
+            
+            for (SecurityForTradesOrders sec : secirities){
+                List<Trades.Trade> trades = sec.getTradesStorage().getObservableList();
+                
+                if (trades.size() > 0){
+                    Trades.Trade trade = trades.get(trades.size()-1);
+
+                    RemnantOfSecurities.RemnantOfSecurityElement remnantOfSecurityElement = new RemnantOfSecurities.RemnantOfSecurityElement();
+                    remnantOfSecurityElement.setDate(trade.getTime());
+                    remnantOfSecurityElement.setIdClient(trade.getClient());
+                    remnantOfSecurityElement.setPurchaseValue(trade.getCostPriceAll());
+                    remnantOfSecurityElement.setRemnant(trade.getQuantityAll());
+                    remnantOfSecurityElement.setSeccode(trade.getSeccode());
+                    remnantOfSecurityElement.setProfit(trade.getProfitAll());
+                    remnants.getElements().add(remnantOfSecurityElement);                    
+                }
+
+            }
+
+        }
+
+    builder.save(remnants);
+    }
+    
+    
+}

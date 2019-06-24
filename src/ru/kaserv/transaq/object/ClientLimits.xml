@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientlimits client="клиент">
+<cbplimit>123.36</cbplimit>
+<cbplused>123.36</cbplused>
+<cbplplanned>123.36</cbplplanned>
+<fob_varmargin>123.36</fob_varmargin>
+<coverage>123.36</coverage>
+<liquidity_c>123.36</liquidity_c>
+<profit>123.36</profit>
+<money_current>123.36</money_current>
+<money_reserve>123.36 </money_reserve>
+<money_free>123.36</money_free>
+<options_premium>123.36</options_premium>
+<exchange_fee>123.36</exchange_fee>
+<forts_varmargin>123.36</forts_varmargin>
+<varmargin>123.36</varmargin>
+<pclmargin>123.36</pclmargin>
+<options_vm>123.36</options_vm >
+<spot_buy_limit>123.36</spot_buy_limit>
+<used_spot_buy_limit>123.36</used_spot_buy_limit>
+<collat_current>123.36</collat_current>
+<collat_blocked>123.36</collat_blocked>
+<collat_free>123.36</collat_free>
+</clientlimits>

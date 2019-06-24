@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.OrdersController">
+    <children>
+      <TableView fx:id="orderTableView" layoutX="14.0" layoutY="42.0" prefHeight="310.0" prefWidth="747.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="200.0">
+        <columns>
+                                
+                            <TableColumn fx:id="columnOrderTableViewOrderno" minWidth="0.0" prefWidth="90.0" text="Orderno" />
+                            <TableColumn fx:id="columnOrderTableViewSecid" minWidth="0.0" prefWidth="90.0" text="Secid" />
+                            <TableColumn fx:id="columnOrderTableViewBoard" minWidth="0.0" prefWidth="90.0" text="Board" />
+                            <TableColumn fx:id="columnOrderTableViewSeccode" minWidth="0.0" prefWidth="90.0" text="Seccode" />
+                            <TableColumn fx:id="columnOrderTableViewClient" minWidth="0.0" prefWidth="90.0" text="Client" />
+                            <TableColumn fx:id="columnOrderTableViewUnion" minWidth="0.0" prefWidth="90.0" text="Union" />
+                            <TableColumn fx:id="columnOrderTableViewStatus" minWidth="0.0" prefWidth="90.0" text="Status" />
+                            <TableColumn fx:id="columnOrderTableViewBuysell" minWidth="0.0" prefWidth="90.0" text="Buysell" />
+                            <TableColumn fx:id="columnOrderTableViewTime" minWidth="0.0" prefWidth="90.0" text="Time" />
+                            <TableColumn fx:id="columnOrderTableViewExpdate" minWidth="0.0" prefWidth="90.0" text="Expdate" />
+                            <TableColumn fx:id="columnOrderTableViewOrigin_orderno" minWidth="0.0" prefWidth="90.0" text="Origin_orderno" />
+                            <TableColumn fx:id="columnOrderTableViewAccepttime" minWidth="0.0" prefWidth="90.0" text="Accepttime" />
+                            <TableColumn fx:id="columnOrderTableViewBrokerref" minWidth="0.0" prefWidth="90.0" text="Brokerref" />
+                            <TableColumn fx:id="columnOrderTableViewValue" minWidth="0.0" prefWidth="90.0" text="Value" />
+                            <TableColumn fx:id="columnOrderTableViewAccruedint" minWidth="0.0" prefWidth="90.0" text="Accruedint" />
+                            <TableColumn fx:id="columnOrderTableViewSettlecode" minWidth="0.0" prefWidth="90.0" text="Settlecode" />
+                            <TableColumn fx:id="columnOrderTableViewBalance" minWidth="0.0" prefWidth="90.0" text="Balance" />
+                            <TableColumn fx:id="columnOrderTableViewPrice" minWidth="0.0" prefWidth="90.0" text="Price" />
+                            <TableColumn fx:id="columnOrderTableViewQuantity" minWidth="0.0" prefWidth="90.0" text="Quantity" />
+                            <TableColumn fx:id="columnOrderTableViewHidden" minWidth="0.0" prefWidth="90.0" text="Hidden" />
+                            <TableColumn fx:id="columnOrderTableViewYield" minWidth="0.0" prefWidth="90.0" text="Yield" />
+                            <TableColumn fx:id="columnOrderTableViewWithdrawtime" minWidth="0.0" prefWidth="90.0" text="Withdrawtime" />
+                            <TableColumn fx:id="columnOrderTableViewCondition" minWidth="0.0" prefWidth="90.0" text="Condition" />
+                            <TableColumn fx:id="columnOrderTableViewConditionvalue" minWidth="0.0" prefWidth="90.0" text="Conditionvalue" />
+                            <TableColumn fx:id="columnOrderTableViewValidafter" minWidth="0.0" prefWidth="90.0" text="Validafter" />
+                            <TableColumn fx:id="columnOrderTableViewValidbefore" minWidth="0.0" prefWidth="90.0" text="Validbefore" />
+                            <TableColumn fx:id="columnOrderTableViewMaxcomission" minWidth="0.0" prefWidth="90.0" text="Maxcomission" />
+                            <TableColumn fx:id="columnOrderTableViewResult" minWidth="0.0" prefWidth="90.0" text="Result" />
+                            <TableColumn fx:id="columnOrderTableViewTransactionid" minWidth="0.0" prefWidth="90.0" text="Transactionid" /> 
+                              
+
+                  
+        </columns>
+        
+
+      </TableView>
+      <Label fx:id="captionLabel" layoutX="67.0" layoutY="78.0" prefHeight="30.0" prefWidth="511.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+
+   </children>     
+</AnchorPane>

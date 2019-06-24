@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trades>
+    <trade>
+        <secid>12345</secid>
+        <tradeno>1234567</tradeno>
+        <orderno>1234567</orderno>
+        <board>Идентификатор борда</board>
+        <seccode> Код инструмента </seccode>
+        <client>Идентификатор клиента</client>
+        <union>Код юниона</union>
+        <buysell>B - покупка, S - продажа</buysell>
+        <time>время сделки</time>
+        <brokerref>примечание</brokerref>
+        <value>12.36</value>
+        <comission>12.36</comission>
+        <price>12.36</price>
+        <items>1234567</items>
+        <quantity>1234</quantity>
+        <yield>123.36</yield>
+        <accruedint>123.36</accruedint>
+        <tradetype>тип сделки: ‘T’ – обычная ‘N’ – РПС ‘R’ – РЕПО    ‘P’ – размещение</tradetype>
+        <settlecode>код поставки</settlecode>
+        <currentpos>1234567</currentpos>
+    </trade>
+        <trade>
+        <secid>12345</secid>
+        <tradeno>1234567</tradeno>
+        <orderno>1234567</orderno>
+        <board>Идентификатор борда</board>
+        <seccode> Код инструмента </seccode>
+        <client>Идентификатор клиента</client>
+        <union>Код юниона</union>
+        <buysell>B - покупка, S - продажа</buysell>
+        <time>время сделки</time>
+        <brokerref>примечание</brokerref>
+        <value>12.36</value>
+        <comission>12.36</comission>
+        <price>12.36</price>
+        <items>1234567</items>
+        <quantity>1234</quantity>
+        <yield>123.36</yield>
+        <accruedint>123.36</accruedint>
+        <tradetype>тип сделки: ‘T’ – обычная ‘N’ – РПС ‘R’ – РЕПО    ‘P’ – размещение</tradetype>
+        <settlecode>код поставки</settlecode>
+        <currentpos>1234567</currentpos>
+    </trade>    
+    <trade>
+        <secid>12345</secid>
+        <tradeno>1234567</tradeno>
+        <orderno>1234567</orderno>
+        <board>Идентификатор борда</board>
+        <seccode> Код инструмента </seccode>
+        <client>Идентификатор клиента</client>
+        <union>Код юниона</union>
+        <buysell>B - покупка, S - продажа</buysell>
+        <time>время сделки</time>
+        <brokerref>примечание</brokerref>
+        <value>12.36</value>
+        <comission>12.36</comission>
+        <price>12.36</price>
+        <items>1234567</items>
+        <quantity>1234</quantity>
+        <yield>123.36</yield>
+        <accruedint>123.36</accruedint>
+        <tradetype>тип сделки: ‘T’ – обычная ‘N’ – РПС ‘R’ – РЕПО    ‘P’ – размещение</tradetype>
+        <settlecode>код поставки</settlecode>
+        <currentpos>1234567</currentpos>
+    </trade>
+    <trade>
+        <secid>12345</secid>
+        <tradeno>1234567</tradeno>
+        <orderno>1234567</orderno>
+        <board>Идентификатор борда</board>
+        <seccode> Код инструмента </seccode>
+        <client>Идентификатор клиента</client>
+        <union>Код юниона</union>
+        <buysell>B - покупка, S - продажа</buysell>
+        <time>время сделки</time>
+        <brokerref>примечание</brokerref>
+        <value>12.36</value>
+        <comission>12.36</comission>
+        <price>12.36</price>
+        <items>1234567</items>
+        <quantity>1234</quantity>
+        <yield>123.36</yield>
+        <accruedint>123.36</accruedint>
+        <tradetype>тип сделки: ‘T’ – обычная ‘N’ – РПС ‘R’ – РЕПО    ‘P’ – размещение</tradetype>
+        <settlecode>код поставки</settlecode>
+        <currentpos>1234567</currentpos>
+    </trade>
+</trades>

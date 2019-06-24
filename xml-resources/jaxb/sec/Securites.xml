@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="securities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="security">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sec_tz" type="xs:string" />
+              <xs:element name="seccode" type="xs:string" />
+              <xs:element name="board" type="xs:string" />
+              <xs:element name="shortname" type="xs:string" />
+              <xs:element name="decimals" type="xs:unsignedByte" />
+              <xs:element name="market" type="xs:unsignedByte" />
+              <xs:element name="sectype" type="xs:string" />
+              <xs:element name="opmask">
+                <xs:complexType>
+                  <xs:attribute name="usecredit" type="xs:string" use="required" />
+                  <xs:attribute name="bymarket" type="xs:string" use="required" />
+                  <xs:attribute name="nosplit" type="xs:string" use="required" />
+                  <xs:attribute name="immorcancel" type="xs:string" use="required" />
+                  <xs:attribute name="cancelbalance" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="minstep" type="xs:decimal" />
+              <xs:element name="lotsize" type="xs:unsignedInt" />
+              <xs:element name="point_cost" type="xs:decimal" />
+              <xs:element name="quotestype" type="xs:unsignedByte" />
+            </xs:sequence>
+            <xs:attribute name="secid" type="xs:unsignedShort" use="required" />
+            <xs:attribute name="active" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

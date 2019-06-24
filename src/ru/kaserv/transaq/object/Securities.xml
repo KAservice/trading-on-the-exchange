@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securities>
+    <security secid="123" active="true/false">
+        <seccode> Код инструмента </seccode>
+        <instrclass>Символ категории (класса) инструмента         </instrclass>
+        <board>Идентификатор режима торгов по умолчанию         </board>
+        <market>Идентификатор рынка</market>
+        <shortname>Наименование бумаги</shortname>
+        <decimals>123</decimals>
+        <minstep>123.36</minstep>
+        <lotsize>123</lotsize>
+        <point_cost>123.36</point_cost>
+        <opmask usecredit="yes/no" bymarket="yes/no"   nosplit="yes/no" fok="yes/no" ioc="yes/no "/>
+        <sectype>Тип бумаги</sectype>
+        <sec_tz>имя таймзоны инструмента (типа "Russian Standard         Time", "USA=Eastern Standard Time"), содержит секцию         CDATA</sec_tz>
+        <quotestype>123</quotestype>
+    </security>    
+        <security secid="123" active="true/false">
+        <seccode> Код инструмента </seccode>
+        <instrclass>Символ категории (класса) инструмента         </instrclass>
+        <board>Идентификатор режима торгов по умолчанию         </board>
+        <market>Идентификатор рынка</market>
+        <shortname>Наименование бумаги</shortname>
+        <decimals>123</decimals>
+        <minstep>123.36</minstep>
+        <lotsize>123</lotsize>
+        <point_cost>123.36</point_cost>
+        <opmask usecredit="yes/no" bymarket="yes/no"   nosplit="yes/no" fok="yes/no" ioc="yes/no "/>
+        <sectype>Тип бумаги</sectype>
+        <sec_tz>имя таймзоны инструмента (типа "Russian Standard         Time", "USA=Eastern Standard Time"), содержит секцию         CDATA</sec_tz>
+        <quotestype>123</quotestype>
+    </security>    
+        <security secid="123" active="true/false">
+        <seccode> Код инструмента </seccode>
+        <instrclass>Символ категории (класса) инструмента         </instrclass>
+        <board>Идентификатор режима торгов по умолчанию         </board>
+        <market>Идентификатор рынка</market>
+        <shortname>Наименование бумаги</shortname>
+        <decimals>123</decimals>
+        <minstep>123.36</minstep>
+        <lotsize>123</lotsize>
+        <point_cost>123.36</point_cost>
+        <opmask usecredit="yes/no" bymarket="yes/no"   nosplit="yes/no" fok="yes/no" ioc="yes/no "/>
+        <sectype>Тип бумаги</sectype>
+        <sec_tz>имя таймзоны инструмента (типа "Russian Standard         Time", "USA=Eastern Standard Time"), содержит секцию         CDATA</sec_tz>
+        <quotestype>123</quotestype>
+    </security>
+</securities>

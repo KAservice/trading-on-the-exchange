@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.ClientsForTradesOrdersController">
+   <children>
+      <TableView fx:id="clientTableView" layoutX="14.0" layoutY="42.0" prefHeight="310.0" prefWidth="747.0">
+        <columns>
+                                
+                              <TableColumn fx:id="columnClientTableViewMarket" text="Market" />                                  
+                              <TableColumn fx:id="columnClientTableViewCurrency" prefWidth="117.0" text="Currency" />
+                              <TableColumn fx:id="columnClientTableViewType" minWidth="0.0" prefWidth="141.0" text="Type" />
+                              <TableColumn fx:id="columnClientTableViewId" minWidth="0.0" prefWidth="141.0" text="Id" />
+                              <TableColumn fx:id="columnClientTableViewRemove" minWidth="0.0" prefWidth="90.0" text="Remove" />
+    
+        </columns>
+      </TableView>
+      <Button layoutX="775.0" layoutY="42.0" mnemonicParsing="false" onAction="#openTableSecurity" text="Инструменты" />
+   </children>
+</AnchorPane>

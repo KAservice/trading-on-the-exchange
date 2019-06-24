@@ -1,0 +1,102 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="united_portfolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:float" name="open_equity"/>
+        <xs:element type="xs:float" name="equity"/>
+        <xs:element type="xs:float" name="chrgoff_ir"/>
+        <xs:element type="xs:float" name="init_req"/>
+        <xs:element type="xs:float" name="chrgoff_mr"/>
+        <xs:element type="xs:float" name="maint_req"/>
+        <xs:element type="xs:float" name="reg_equity"/>
+        <xs:element type="xs:float" name="reg_ir"/>
+        <xs:element type="xs:float" name="reg_mr"/>
+        <xs:element type="xs:float" name="vm"/>
+        <xs:element type="xs:float" name="finres"/>
+        <xs:element type="xs:float" name="go"/>
+        <xs:element type="xs:float" name="vm_mma"/>
+        <xs:element name="money" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:float" name="open_balance"/>
+              <xs:element type="xs:float" name="bought"/>
+              <xs:element type="xs:float" name="sold"/>
+              <xs:element type="xs:float" name="settled"/>
+              <xs:element type="xs:float" name="balance"/>
+              <xs:element type="xs:float" name="tax"/>
+              <xs:element name="value_part" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:float" name="open_balance"/>
+                    <xs:element type="xs:float" name="bought"/>
+                    <xs:element type="xs:float" name="sold"/>
+                    <xs:element type="xs:float" name="settled"/>
+                    <xs:element type="xs:float" name="balance"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="register" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="asset" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:float" name="setoff_rate"/>
+              <xs:element type="xs:float" name="init_req"/>
+              <xs:element type="xs:float" name="maint_req"/>
+              <xs:element name="security" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="market"/>
+                    <xs:element type="xs:string" name="seccode"/>
+                    <xs:element type="xs:float" name="price"/>
+                    <xs:element type="xs:byte" name="open_balance"/>
+                    <xs:element type="xs:byte" name="bought"/>
+                    <xs:element type="xs:byte" name="sold"/>
+                    <xs:element type="xs:byte" name="balance"/>
+                    <xs:element type="xs:float" name="balance_prc"/>
+                    <xs:element type="xs:float" name="unrealized_pnl"/>
+                    <xs:element type="xs:byte" name="buying"/>
+                    <xs:element type="xs:byte" name="selling"/>
+                    <xs:element type="xs:float" name="equity"/>
+                    <xs:element type="xs:float" name="reg_equity"/>
+                    <xs:element type="xs:float" name="riskrate_long"/>
+                    <xs:element type="xs:float" name="riskrate_short"/>
+                    <xs:element type="xs:float" name="reserate_long"/>
+                    <xs:element type="xs:float" name="reserate_short"/>
+                    <xs:element type="xs:float" name="pl"/>
+                    <xs:element type="xs:float" name="pnl_income"/>
+                    <xs:element type="xs:float" name="pnl_intraday"/>
+                    <xs:element type="xs:byte" name="maxbuy"/>
+                    <xs:element type="xs:byte" name="maxsell"/>
+                    <xs:element name="value_part" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="open_balance"/>
+                          <xs:element type="xs:byte" name="bought"/>
+                          <xs:element type="xs:byte" name="sold"/>
+                          <xs:element type="xs:byte" name="settled"/>
+                          <xs:element type="xs:byte" name="balance"/>
+                          <xs:element type="xs:byte" name="buying"/>
+                          <xs:element type="xs:byte" name="selling"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="register" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="secid" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="code" use="optional"/>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="union"/>
+      <xs:attribute type="xs:string" name="client"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

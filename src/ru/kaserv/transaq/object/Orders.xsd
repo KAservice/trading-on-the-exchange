@@ -1,0 +1,93 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="orders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="order" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:long" name="orderno"/>
+              <xs:element type="xs:int" name="secid"/>
+              <xs:element type="xs:string" name="board"/>
+              <xs:element type="xs:string" name="seccode"/>
+              <xs:element type="xs:string" name="client"/>
+              <xs:element type="xs:string" name="union"/>
+              <xs:element type="xs:string" name="status"/>
+              <xs:element type="xs:string" name="buysell"/>
+              <xs:element type="xs:string" name="time"/>
+              <xs:element type="xs:string" name="expdate"/>
+              <xs:element type="xs:long" name="origin_orderno"/>
+              <xs:element type="xs:string" name="accepttime"/>
+              <xs:element type="xs:string" name="brokerref"/>
+              <xs:element type="xs:decimal" name="value"/>
+              <xs:element type="xs:decimal" name="accruedint"/>
+              <xs:element type="xs:string" name="settlecode"/>
+              <xs:element type="xs:int" name="balance"/>
+              <xs:element type="xs:decimal" name="price"/>
+              <xs:element type="xs:int" name="quantity"/>
+              <xs:element type="xs:int" name="hidden"/>
+              <xs:element type="xs:decimal" name="yield"/>
+              <xs:element type="xs:string" name="withdrawtime"/>
+              <xs:element type="xs:string" name="condition"/>
+              <xs:element type="xs:decimal" name="conditionvalue"/>
+              <xs:element type="xs:string" name="validafter"/>
+              <xs:element type="xs:string" name="validbefore"/>
+              <xs:element type="xs:decimal" name="maxcomission"/>
+              <xs:element type="xs:string" name="result"/>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="transactionid"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="stoporder" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:long" name="activeorderno"/>
+              <xs:element type="xs:int" name="secid"/>
+              <xs:element type="xs:int" name="board"/>
+              <xs:element type="xs:string" name="seccode"/>
+              <xs:element type="xs:string" name="client"/>
+              <xs:element type="xs:string" name="buysell"/>
+              <xs:element type="xs:string" name="canceller"/>
+              <xs:element type="xs:short" name="alltradeno"/>
+              <xs:element type="xs:string" name="validbefore"/>
+              <xs:element type="xs:string" name="author"/>
+              <xs:element type="xs:string" name="accepttime"/>
+              <xs:element type="xs:long" name="linkedorderno"/>
+              <xs:element type="xs:string" name="expdate"/>
+              <xs:element type="xs:string" name="status"/>
+              <xs:element name="stoploss">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:decimal" name="activationprice"/>
+                    <xs:element type="xs:string" name="guardtime"/>
+                    <xs:element type="xs:string" name="brokerref"/>
+                    <xs:element type="xs:decimal" name="quantity"/>
+                    <xs:element type="xs:decimal" name="orderprice"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="usecredit"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="takeprofit">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:decimal" name="activationprice"/>
+                    <xs:element type="xs:string" name="guardtime"/>
+                    <xs:element type="xs:string" name="brokerref"/>
+                    <xs:element type="xs:decimal" name="quantity"/>
+                    <xs:element type="xs:decimal" name="extremum"/>
+                    <xs:element type="xs:decimal" name="level"/>
+                    <xs:element type="xs:decimal" name="correction"/>
+                    <xs:element type="xs:decimal" name="guardspread"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="withdrawtime"/>
+              <xs:element type="xs:string" name="result"/>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="transactionid"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

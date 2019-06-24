@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client id="CLIENT_ID" remove="true/false">
+<type>тип клиента</type>
+<currency>валюта фондового портфеля клиента</currency>
+<market>123</market>
+<union>код юниона </union>
+<forts_acc>счет FORTS </forts_acc>
+</client>

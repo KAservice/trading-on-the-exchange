@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+<order transactionid ="123456">
+    <orderno>12345678</orderno>
+    <secid>123</secid>
+    <board>идентификатор борда</board>
+    <seccode>код инструмента</seccode>
+    <client>идентификатор клиента</client>
+    <union>Код юниона </union>
+    <status>статус заявки (см. ниже в таблице 5)</status>
+    <buysell>покупка (B)  продажа (S)</buysell>
+    <time>23.07.2012 00:00:00</time>
+    <expdate>23.07.2012 00:00:00</expdate>
+    <origin_orderno>1234567</origin_orderno>
+    <accepttime>23.07.2012 00:00:00</accepttime>
+    <brokerref>примечание</brokerref>
+    <value>12.36</value>
+    <accruedint>12.36</accruedint>
+    <settlecode>Код поставки (значение биржи, определяющее правила расчетов - смотрите подробнее в документах биржи)</settlecode>
+    <balance>123</balance>
+    <price>123.36</price>
+    <quantity>123</quantity>
+    <hidden>123</hidden>
+    <yield>12.36</yield>
+    <withdrawtime>23.07.2012 00:00:00</withdrawtime>
+    <condition>jhdjkhgk</condition>
+    <conditionvalue>123.36</conditionvalue>
+    <validafter>23.07.2012 00:00:00</validafter>
+    <validbefore>23.07.2012 00:00:00</validbefore>
+    <maxcomission>12.36</maxcomission>
+    <result>сообщение биржи в случае отказа выставить заявку</result>
+</order>
+<order transactionid ="123456">
+    <orderno>12345678</orderno>
+    <secid>123</secid>
+    <board>идентификатор борда</board>
+    <seccode>код инструмента</seccode>
+    <client>идентификатор клиента</client>
+    <union>Код юниона </union>
+    <status>статус заявки (см. ниже в таблице 5)</status>
+    <buysell>покупка (B)  продажа (S)</buysell>
+    <time>23.07.2012 00:00:00</time>
+    <expdate>23.07.2012 00:00:00</expdate>
+    <origin_orderno>1234567</origin_orderno>
+    <accepttime>23.07.2012 00:00:00</accepttime>
+    <brokerref>примечание</brokerref>
+    <value>12.36</value>
+    <accruedint>12.36</accruedint>
+    <settlecode>Код поставки (значение биржи, определяющее правила расчетов - смотрите подробнее в документах биржи)</settlecode>
+    <balance>123</balance>
+    <price>123.36</price>
+    <quantity>123</quantity>
+    <hidden>123</hidden>
+    <yield>12.36</yield>
+    <withdrawtime>23.07.2012 00:00:00</withdrawtime>
+    <condition>jhdjkhgk</condition>
+    <conditionvalue>123.36</conditionvalue>
+    <validafter>23.07.2012 00:00:00</validafter>
+    <validbefore>23.07.2012 00:00:00</validbefore>
+    <maxcomission>12.36</maxcomission>
+    <result>сообщение биржи в случае отказа выставить заявку</result>
+</order>
+<order transactionid ="123456">
+    <orderno>12345678</orderno>
+    <secid>123</secid>
+    <board>идентификатор борда</board>
+    <seccode>код инструмента</seccode>
+    <client>идентификатор клиента</client>
+    <union>Код юниона </union>
+    <status>статус заявки (см. ниже в таблице 5)</status>
+    <buysell>покупка (B)  продажа (S)</buysell>
+    <time>23.07.2012 00:00:00</time>
+    <expdate>23.07.2012 00:00:00</expdate>
+    <origin_orderno>1234567</origin_orderno>
+    <accepttime>23.07.2012 00:00:00</accepttime>
+    <brokerref>примечание</brokerref>
+    <value>12.36</value>
+    <accruedint>12.36</accruedint>
+    <settlecode>Код поставки (значение биржи, определяющее правила расчетов - смотрите подробнее в документах биржи)</settlecode>
+    <balance>123</balance>
+    <price>123.36</price>
+    <quantity>123</quantity>
+    <hidden>123</hidden>
+    <yield>12.36</yield>
+    <withdrawtime>23.07.2012 00:00:00</withdrawtime>
+    <condition>jhdjkhgk</condition>
+    <conditionvalue>123.36</conditionvalue>
+    <validafter>23.07.2012 00:00:00</validafter>
+    <validbefore>23.07.2012 00:00:00</validbefore>
+    <maxcomission>12.36</maxcomission>
+    <result>сообщение биржи в случае отказа выставить заявку</result>
+</order>
+<stoporder transactionid="идентификатор стопа">
+    <activeorderno>123</activeorderno>
+    <secid>123698</secid>
+    <board>123</board>
+    <seccode>код инструмента</seccode>
+    <client>lghlgh</client>
+    <buysell>ghlj</buysell>
+    <canceller>ghjl</canceller>
+    <alltradeno>12369</alltradeno>
+    <validbefore>23.07.2012 00:00:00</validbefore>
+    <author>ffhf</author>
+    <accepttime>23.07.2012 00:00:00</accepttime>
+    <linkedorderno>1234568</linkedorderno>
+    <expdate>23.07.2012 00:00:00</expdate>
+    <status>fdghfgj</status>
+    <stoploss usecredit="yes/no">
+        <activationprice>123.36</activationprice>
+        <guardtime>23.07.2012 00:00:00</guardtime>
+        <brokerref>jkjk;</brokerref>
+        <quantity>123.36</quantity>
+        <orderprice>12.36</orderprice>
+    </stoploss>
+    <takeprofit>
+        <activationprice>12.36</activationprice>
+        <guardtime>23.07.2012 00:00:00</guardtime>
+        <brokerref>hsh</brokerref>
+        <quantity>12.36</quantity>
+        <extremum>12.36</extremum>
+        <level>12.36</level>
+        <correction>12.36</correction>
+        <guardspread>12.36</guardspread>
+    </takeprofit>
+    <withdrawtime>23.07.2012 00:00:00</withdrawtime>
+    <result>сообщение биржи в случае отказа выставить заявку </result>
+</stoporder>
+
+<stoporder transactionid="идентификатор стопа">
+    <activeorderno>123</activeorderno>
+    <secid>123698</secid>
+    <board>123</board>
+    <seccode>код инструмента</seccode>
+    <client>lghlgh</client>
+    <buysell>ghlj</buysell>
+    <canceller>ghjl</canceller>
+    <alltradeno>12369</alltradeno>
+    <validbefore>23.07.2012 00:00:00</validbefore>
+    <author>ffhf</author>
+    <accepttime>23.07.2012 00:00:00</accepttime>
+    <linkedorderno>1234568</linkedorderno>
+    <expdate>23.07.2012 00:00:00</expdate>
+    <status>fdghfgj</status>
+    <stoploss usecredit="yes/no">
+        <activationprice>123.36</activationprice>
+        <guardtime>23.07.2012 00:00:00</guardtime>
+        <brokerref>jkjk;</brokerref>
+        <quantity>123.36</quantity>
+        <orderprice>12.36</orderprice>
+    </stoploss>
+    <takeprofit>
+        <activationprice>12.36</activationprice>
+        <guardtime>23.07.2012 00:00:00</guardtime>
+        <brokerref>hsh</brokerref>
+        <quantity>12.36</quantity>
+        <extremum>12.36</extremum>
+        <level>12.36</level>
+        <correction>12.36</correction>
+        <guardspread>12.36</guardspread>
+    </takeprofit>
+    <withdrawtime>23.07.2012 00:00:00</withdrawtime>
+    <result>сообщение биржи в случае отказа выставить заявку </result>
+</stoporder>
+<stoporder transactionid="идентификатор стопа">
+    <activeorderno>123</activeorderno>
+    <secid>123698</secid>
+    <board>123</board>
+    <seccode>код инструмента</seccode>
+    <client>lghlgh</client>
+    <buysell>ghlj</buysell>
+    <canceller>ghjl</canceller>
+    <alltradeno>12369</alltradeno>
+    <validbefore>23.07.2012 00:00:00</validbefore>
+    <author>ffhf</author>
+    <accepttime>23.07.2012 00:00:00</accepttime>
+    <linkedorderno>1234568</linkedorderno>
+    <expdate>23.07.2012 00:00:00</expdate>
+    <status>fdghfgj</status>
+    <stoploss usecredit="yes/no">
+        <activationprice>123.36</activationprice>
+        <guardtime>23.07.2012 00:00:00</guardtime>
+        <brokerref>jkjk;</brokerref>
+        <quantity>123.36</quantity>
+        <orderprice>12.36</orderprice>
+    </stoploss>
+    <takeprofit>
+        <activationprice>12.36</activationprice>
+        <guardtime>23.07.2012 00:00:00</guardtime>
+        <brokerref>hsh</brokerref>
+        <quantity>12.36</quantity>
+        <extremum>12.36</extremum>
+        <level>12.36</level>
+        <correction>12.36</correction>
+        <guardspread>12.36</guardspread>
+    </takeprofit>
+    <withdrawtime>23.07.2012 00:00:00</withdrawtime>
+    <result>сообщение биржи в случае отказа выставить заявку </result>
+</stoporder>
+</orders>

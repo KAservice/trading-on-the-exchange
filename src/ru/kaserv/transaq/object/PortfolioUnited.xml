@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<united_portfolio union="jljhl" client="E19">
+<open_equity>5732.48</open_equity>
+<equity>5732.48</equity>
+<chrgoff_ir>5732.48</chrgoff_ir>
+<init_req>5732.48</init_req>
+<chrgoff_mr>5732.48</chrgoff_mr>
+<maint_req>5732.48</maint_req>
+<reg_equity>5732.48</reg_equity>
+<reg_ir>5732.48</reg_ir>
+<reg_mr>5732.48</reg_mr>
+<vm>5732.48</vm>
+<finres>5732.48</finres>
+<go>5732.48</go>
+<vm_mma>5732.48</vm_mma>
+    <money name="string">
+        <open_balance>5732.48</open_balance>
+        <bought>5732.48</bought>
+        <sold>5732.48</sold>
+        <settled>5732.48</settled>
+        <balance>5732.48</balance>
+        <tax>5732.48</tax>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+    </money>
+    <money name="string">
+        <open_balance>5732.48</open_balance>
+        <bought>5732.48</bought>
+        <sold>5732.48</sold>
+        <settled>5732.48</settled>
+        <balance>5732.48</balance>
+        <tax>5732.48</tax>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+    </money>
+    <money name="string">
+        <open_balance>5732.48</open_balance>
+        <bought>5732.48</bought>
+        <sold>5732.48</sold>
+        <settled>5732.48</settled>
+        <balance>5732.48</balance>
+        <tax>5732.48</tax>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+            <value_part register="регистр учёта :string">
+                <open_balance>5732.48</open_balance>
+                <bought>5732.48</bought>
+                <sold>5732.48</sold>
+                <settled>5732.48</settled>
+                <balance>5732.48</balance>
+            </value_part>
+    </money>
+
+<asset code="Код базового актива :string" name="Наименование базового актива :string">
+    <setoff_rate>5732.48</setoff_rate>
+    <init_req>5732.48</init_req>
+    <maint_req>5732.48</maint_req>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+</asset>
+<asset code="Код базового актива :string" name="Наименование базового актива :string">
+    <setoff_rate>5732.48</setoff_rate>
+    <init_req>5732.48</init_req>
+    <maint_req>5732.48</maint_req>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+</asset>
+<asset code="Код базового актива :string" name="Наименование базового актива :string">
+    <setoff_rate>5732.48</setoff_rate>
+    <init_req>5732.48</init_req>
+    <maint_req>5732.48</maint_req>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+    <security secid="123">
+        <market>123</market>
+        <seccode>dfjjjj</seccode>
+        <price>5732.48</price>
+        <open_balance>123</open_balance>
+        <bought>123</bought>
+        <sold>123</sold>
+        <balance>123</balance>
+        <balance_prc>5732.48</balance_prc>
+        <unrealized_pnl>5732.48</unrealized_pnl>
+        <buying>23</buying>
+        <selling>23</selling>
+        <equity>5732.48</equity>
+        <reg_equity>5732.48</reg_equity>
+        <riskrate_long>5732.48</riskrate_long>
+        <riskrate_short>5732.48</riskrate_short>
+        <reserate_long>5732.48</reserate_long>
+        <reserate_short>5732.48</reserate_short>
+        <pl>5732.48</pl>
+        <pnl_income>5732.48</pnl_income>
+        <pnl_intraday>5732.48</pnl_intraday>
+        <maxbuy>123</maxbuy>
+        <maxsell>42</maxsell>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+        <value_part register="регистр учёта :string">
+            <open_balance>123</open_balance>
+            <bought>123</bought>
+            <sold>123</sold>
+            <settled>123</settled>
+            <balance>123</balance>
+            <buying>123</buying>
+            <selling>123</selling>
+        </value_part>
+    </security>
+</asset>
+</united_portfolio>
+
+
+

@@ -1,0 +1,30 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="clientlimits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:decimal" name="cbplimit"/>
+        <xs:element type="xs:decimal" name="cbplused"/>
+        <xs:element type="xs:decimal" name="cbplplanned"/>
+        <xs:element type="xs:decimal" name="fob_varmargin"/>
+        <xs:element type="xs:decimal" name="coverage"/>
+        <xs:element type="xs:decimal" name="liquidity_c"/>
+        <xs:element type="xs:decimal" name="profit"/>
+        <xs:element type="xs:decimal" name="money_current"/>
+        <xs:element type="xs:decimal" name="money_reserve"/>
+        <xs:element type="xs:decimal" name="money_free"/>
+        <xs:element type="xs:decimal" name="options_premium"/>
+        <xs:element type="xs:decimal" name="exchange_fee"/>
+        <xs:element type="xs:decimal" name="forts_varmargin"/>
+        <xs:element type="xs:decimal" name="varmargin"/>
+        <xs:element type="xs:decimal" name="pclmargin"/>
+        <xs:element type="xs:decimal" name="options_vm"/>
+        <xs:element type="xs:decimal" name="spot_buy_limit"/>
+        <xs:element type="xs:decimal" name="used_spot_buy_limit"/>
+        <xs:element type="xs:decimal" name="collat_current"/>
+        <xs:element type="xs:decimal" name="collat_blocked"/>
+        <xs:element type="xs:decimal" name="collat_free"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="client"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

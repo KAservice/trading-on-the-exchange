@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.PortfolioTplusController">
+   <top>
+       <Pane prefHeight="175.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <children>
+                <Label fx:id="captionLabel" layoutX="23.0" layoutY="37.0" text="Label" />
+                <Label fx:id="label1" layoutX="23.0" layoutY="66.0" text="Label" />
+                <TextField fx:id="textField1" layoutX="77.0" layoutY="54.0" />
+                <TextField fx:id="textField2" layoutX="263.0" layoutY="54.0" />      
+                <TextField fx:id="textField3" layoutX="77.0" layoutY="104.0" />
+                <TextField fx:id="textField4" layoutX="263.0" layoutY="104.0" />
+            </children>
+       </Pane>
+   </top>
+   <bottom>
+      <Pane prefHeight="82.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TableView fx:id="securitiesTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="columnClientTableViewMarket" prefWidth="75.0" text="Market" />
+            <TableColumn fx:id="columnClientTableViewSeccode" prefWidth="75.0" text="Seccode" />
+            <TableColumn fx:id="columnClientTableViewPrice" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="columnClientTableViewOpenBalance" prefWidth="75.0" text="OpenBalance" />
+            <TableColumn fx:id="columnClientTableViewBought" prefWidth="75.0" text="Bought" />
+            <TableColumn fx:id="columnClientTableViewSold" prefWidth="75.0" text="Sold" /> 
+            <TableColumn fx:id="columnClientTableViewBalance" prefWidth="75.0" text="Balance" />
+            <TableColumn fx:id="columnClientTableViewBalancePrc" prefWidth="75.0" text="BalancePrc" />
+          <TableColumn fx:id="columnClientTableViewUnrealizedPnl" prefWidth="75.0" text="UnrealizedPnl" />
+          <TableColumn fx:id="columnClientTableViewBuying" prefWidth="75.0" text="Buying" />  
+          <TableColumn fx:id="columnClientTableViewSelling" prefWidth="75.0" text="Selling" />
+          <TableColumn fx:id="columnClientTableViewCover" prefWidth="75.0" text="Cover" />
+          <TableColumn fx:id="columnClientTableViewInitMargin" prefWidth="75.0" text="Margin" />
+          <TableColumn fx:id="columnClientTableViewRiskrateLong" prefWidth="75.0" text="RiskrateLong" />  
+          <TableColumn fx:id="columnClientTableViewRiskrateShort" prefWidth="75.0" text="RiskrateShort" />
+          <TableColumn fx:id="columnClientTableViewPnlIncome" prefWidth="75.0" text="PnlIncome" />
+          <TableColumn fx:id="columnClientTableViewPnlIntraday" prefWidth="75.0" text="PnlIntraday" />
+          <TableColumn fx:id="columnClientTableViewMaxbuy" prefWidth="75.0" text="Maxbuy" />  
+          <TableColumn fx:id="columnClientTableViewMaxsell" prefWidth="75.0" text="Maxsell" />
+          <TableColumn fx:id="columnClientTableViewSecid" prefWidth="75.0" text="Secid" />
+          
+  
+
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

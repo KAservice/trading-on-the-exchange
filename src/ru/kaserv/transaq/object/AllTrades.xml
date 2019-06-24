@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alltrades>
+    <trade secid ="123">
+        <seccode> Код инструмента </seccode>
+        <tradeno>123568</tradeno>
+        <time>время сделки</time>
+        <board> наименование борда </board>
+        <price>1.36</price>
+        <quantity>123</quantity>
+        <buysell>покупка (B) / продажа (S)</buysell>
+        <openinterest>123</openinterest>
+        <period>Период торгов (O - открытие, N - торги, С -     закрытие)</period>
+    </trade>
+    <trade secid ="123">
+        <seccode> Код инструмента </seccode>
+        <tradeno>123568</tradeno>
+        <time>время сделки</time>
+        <board> наименование борда </board>
+        <price>1.36</price>
+        <quantity>123</quantity>
+        <buysell>покупка (B) / продажа (S)</buysell>
+        <openinterest>123</openinterest>
+        <period>Период торгов (O - открытие, N - торги, С -     закрытие)</period>
+    </trade>
+    <trade secid ="123">
+        <seccode> Код инструмента </seccode>
+        <tradeno>123568</tradeno>
+        <time>время сделки</time>
+        <board> наименование борда </board>
+        <price>1.36</price>
+        <quantity>123</quantity>
+        <buysell>покупка (B) / продажа (S)</buysell>
+        <openinterest>123</openinterest>
+        <period>Период торгов (O - открытие, N - торги, С -     закрытие)</period>
+    </trade>
+</alltrades>

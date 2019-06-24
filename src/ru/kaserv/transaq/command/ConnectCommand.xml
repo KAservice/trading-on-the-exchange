@@ -1,0 +1,18 @@
+<command id="connect">
+<login>user_id</login>
+<password>user_password</password>
+<host>server_ip</host>
+<port>123</port>
+<language>ru/en</language>
+<autopos>true</autopos>
+<micex_registers>true</micex_registers>
+<milliseconds>true</milliseconds>
+<utc_time>true</utc_time>
+<proxy type="тип" addr="адрес" port="123" login="логин" password="пароль"/>
+<rqdelay>100</rqdelay>
+<session_timeout>25</session_timeout>
+<request_timeout>10</request_timeout>
+<push_u_limits>10</push_u_limits>
+<push_pos_equity>10</push_pos_equity>
+</command>
+

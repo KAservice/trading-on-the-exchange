@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="1012.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.TradesController">
+    
+   <children>
+      <TableView fx:id="tradeTableView" layoutX="14.0" layoutY="42.0" prefHeight="310.0" prefWidth="747.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="200.0">
+        <columns>
+                                
+                              
+        <TableColumn fx:id="columnTradeTableViewTime" minWidth="0.0" prefWidth="180.0" text="Time" />
+
+        <TableColumn fx:id="columnTradeTableViewProfitAllTrade" minWidth="0.0" prefWidth="89.0" text="Доход общ." />
+        <TableColumn fx:id="columnTradeTableViewProfitTrade" minWidth="0.0" prefWidth="85.0" text="Доход тек." />
+        
+        <TableColumn fx:id="columnTradeTableViewQuantityAll" minWidth="0.0" prefWidth="68.0" text="Остаток" /> 
+        <TableColumn fx:id="columnTradeTableViewCostPriceAll" minWidth="0.0" prefWidth="88.0" text="Себест. ост." /> 
+          
+        <TableColumn fx:id="columnTradeTableViewBuyQuantity" minWidth="0.0" prefWidth="58.0" text="Куплено" />
+        <TableColumn fx:id="columnTradeTableViewBuySum" minWidth="0.0" prefWidth="77.0" text="Сумма, пок." />
+        <TableColumn fx:id="columnTradeTableViewSellQuantity" minWidth="0.0" prefWidth="64.0" text="Продано" />    
+        <TableColumn fx:id="columnTradeTableViewSellSum" minWidth="0.0" prefWidth="95.0" text="Сумма, прод" />
+        <TableColumn fx:id="columnTradeTableViewCostPriceBuyTrade" minWidth="0.0" prefWidth="84.0" text="Себест. пок" />
+        <TableColumn fx:id="columnTradeTableViewCostPriceSellTrade" minWidth="0.0" prefWidth="109.0" text="Себест. продажи" />
+        
+        
+        <TableColumn fx:id="columnTradeTableViewCostPriceUnit" minWidth="0.0" prefWidth="141.0" text="Себест." />
+        <TableColumn fx:id="columnTradeTableViewPrice" minWidth="0.0" prefWidth="141.0" text="Price" />
+        <TableColumn fx:id="columnTradeTableViewItems" minWidth="0.0" prefWidth="90.0" text="Items" />
+        <TableColumn fx:id="columnTradeTableViewQuantity" prefWidth="117.0" text="Quantity" />
+        <TableColumn fx:id="columnTradeTableViewBuysell" minWidth="0.0" prefWidth="141.0" text="Buysell" />
+                                            
+          <TableColumn fx:id="columnTradeTableViewTradeno" prefWidth="200.0" text="Tradeno" />
+          <TableColumn fx:id="columnTradeTableViewOrderno" minWidth="0.0" prefWidth="141.0" text="Orderno" />
+          <TableColumn fx:id="columnTradeTableViewBoard" minWidth="0.0" prefWidth="141.0" text="Board" />
+          <TableColumn fx:id="columnTradeTableViewSeccode" minWidth="0.0" prefWidth="90.0" text="Seccode" />
+          <TableColumn fx:id="columnTradeTableViewClient" prefWidth="117.0" text="Client" />
+          
+          
+          <TableColumn fx:id="columnTradeTableViewSecid" text="Secid" />
+          <TableColumn fx:id="columnTradeTableViewUnion" minWidth="0.0" prefWidth="141.0" text="Union" />
+
+          <TableColumn fx:id="columnTradeTableViewBrokerref" text="Brokerref" />                                  
+          <TableColumn fx:id="columnTradeTableViewValue" prefWidth="117.0" text="Value" />
+          <TableColumn fx:id="columnTradeTableViewComission" minWidth="0.0" prefWidth="141.0" text="Comission" />
+
+          <TableColumn fx:id="columnTradeTableViewYield" minWidth="0.0" prefWidth="141.0" text="Yield" />
+          <TableColumn fx:id="columnTradeTableViewAccruedint" minWidth="0.0" prefWidth="141.0" text="Accruedint" />
+          <TableColumn fx:id="columnTradeTableViewTradetype" minWidth="0.0" prefWidth="90.0" text="Tradetype" />
+          <TableColumn fx:id="columnTradeTableViewSettlecode" minWidth="0.0" prefWidth="90.0" text="Settlecode" />
+          <TableColumn fx:id="columnTradeTableViewCurrentpos" minWidth="0.0" prefWidth="90.0" text="Currentpos" />
+
+
+                  
+        </columns>
+        
+
+      </TableView>
+      <Label fx:id="captionLabel" layoutX="67.0" layoutY="78.0" prefHeight="30.0" prefWidth="593.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+
+   </children>    
+    
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.SecuritiesController">
+                        <TableView fx:id="securityTableView" layoutX="16.0" layoutY="14.0" prefHeight="496.0" prefWidth="710.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="columnShortName" prefWidth="158.0" text="ShortName" />
+                              <TableColumn fx:id="columnSecTz" minWidth="0.0" prefWidth="172.0" text="SecTz" />
+                              <TableColumn fx:id="columnSeccode" minWidth="0.0" prefWidth="166.0" text="Seccode" />
+                              <TableColumn fx:id="columnBoard" minWidth="0.0" prefWidth="93.0" text="Board" />
+                              <TableColumn fx:id="columnDecimals" minWidth="0.0" prefWidth="239.0" text="Decimals" />
+                              <TableColumn fx:id="columnMarket" minWidth="0.0" prefWidth="239.0" text="Market" />
+                              <TableColumn fx:id="columnSectype" minWidth="0.0" prefWidth="239.0" text="Sectype" />
+                              <TableColumn fx:id="columnMinstep" minWidth="0.0" prefWidth="239.0" text="Minstep" />
+                              <TableColumn fx:id="columnLotsize" minWidth="0.0" prefWidth="239.0" text="lotsize" />
+                              <TableColumn fx:id="columnPointCost" minWidth="0.0" prefWidth="239.0" text="PointCost" />
+                              <TableColumn fx:id="columnQuotestype" minWidth="0.0" prefWidth="239.0" text="Quotestype" />
+                              <TableColumn fx:id="columnSecid" minWidth="0.0" prefWidth="239.0" text="Secid" />
+                              <TableColumn fx:id="columnActive" minWidth="0.0" prefWidth="239.0" text="Active" />
+                           </columns>
+                        </TableView>    
+</AnchorPane>

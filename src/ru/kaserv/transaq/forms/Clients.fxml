@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="531.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.ClientsController">
+   <children>
+                   
+                     <AnchorPane layoutY="-36.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="23.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleButtonSendQueryPortfolioTplusAction" text="Запросить портфель +" />
+            <Button layoutX="18.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleButtonOpenPortfolioTplusAction" text="Посмотреть портфель +" />
+         </children></AnchorPane>
+                     <TableView fx:id="clientTableView" layoutX="14.0" layoutY="140.0" prefHeight="377.0" prefWidth="590.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                        <columns>                               
+                           <TableColumn fx:id="columnClientTableViewMarket" text="Market" />                                  
+                           <TableColumn fx:id="columnClientTableViewCurrency" prefWidth="117.0" text="Currency" />
+                           <TableColumn fx:id="columnClientTableViewType" minWidth="0.0" prefWidth="141.0" text="Type" />
+                           <TableColumn fx:id="columnClientTableViewId" minWidth="0.0" prefWidth="141.0" text="Id" />
+                           <TableColumn fx:id="columnClientTableViewRemove" minWidth="0.0" prefWidth="90.0" text="Remove" />
+                           <TableColumn fx:id="columnClientTableViewUnion" minWidth="0.0" prefWidth="141.0" text="Id" />
+                           <TableColumn fx:id="columnClientTableViewFortsAcc" minWidth="0.0" prefWidth="90.0" text="Remove" />     
+        
+                        </columns>
+                     </TableView>
+      <Button layoutX="223.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleButtonOpenPortfolioUnitedAction" text="Посмотреть объединенный портфель" />
+      <Button layoutX="223.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleButtonSendQueryPortfolioUnitedAction" text="Запросить объединенный портфель" />
+      <Button layoutX="493.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleButtonSendQueryClientLimitsAction" text="Запросить лимиты" />
+      <Button layoutX="495.0" layoutY="82.0" mnemonicParsing="false" onAction="#handleButtonOpenClientLimitsAction" text="Посмотреть лимиты" />
+   </children>
+                
+</AnchorPane>
