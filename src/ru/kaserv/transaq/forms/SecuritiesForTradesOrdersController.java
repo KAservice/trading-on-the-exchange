@@ -7,6 +7,7 @@ package ru.kaserv.transaq.forms;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
 import java.util.ResourceBundle;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
@@ -23,6 +24,8 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import ru.kaserv.transaq.configuration.ClientForTradesOrders;
 import ru.kaserv.transaq.configuration.SecurityForTradesOrders;
+import ru.kaserv.transaq.configuration.StorageConfig;
+import ru.kaserv.transaq.object.Securities;
 
 /**
  * FXML Controller class
@@ -33,6 +36,11 @@ public class SecuritiesForTradesOrdersController implements Initializable {
     
     
     private ClientForTradesOrders clientForTradesOrders = null;
+    
+    private IExternalEvent externalEventListner;
+    private boolean flChoice;
+    
+    private SecuritiesController choiceSecuritiesController;
     
     
     @FXML
@@ -242,6 +250,64 @@ public class SecuritiesForTradesOrdersController implements Initializable {
         newWindow.setScene(scene);
         newWindow.show();
 
+    }
+    
+    
+        @FXML
+    private void handleNewElement(ActionEvent event) { 
+               
+    
+        
+        Stage newWindow = new Stage();    
+        //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Securities.fxml"));
+        Parent root = null;
+   
+            try {
+                root = loader.load();        
+            }
+            catch (IOException err){
+                
+                System.out.println("ошибка " + err);
+                err.printStackTrace();
+            }  
+
+        choiceSecuritiesController = loader.<SecuritiesController>getController();
+        
+        choiceSecuritiesController.setExternalEventListner(new EventHandler());
+        choiceSecuritiesController.setFlChoice(true);
+            
+            
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }  
+    
+    
+    
+    
+    class EventHandler implements IExternalEvent{
+
+        @Override
+        public void ExternalEvent(int type, boolean vibor) {
+            if (type == 1 ){
+                if (choiceSecuritiesController != null){
+                    StorageConfig storageConfig = StorageConfig.getStorageConfig();       
+                    Collection collSecurities = clientForTradesOrders.getSecuritiesForTradesOrders();  
+                    
+                    Securities.Security security = choiceSecuritiesController.getSelectionElement();
+                    if (security != null){
+                        SecurityForTradesOrders securityForTradesOrders = new SecurityForTradesOrders(security);
+                        collSecurities.add(securityForTradesOrders);       
+                        securityTableView.setItems(FXCollections.observableArrayList(clientForTradesOrders.getSecuritiesForTradesOrders()));
+                    }
+
+                    
+                }
+                choiceSecuritiesController = null;
+            }
+        }
+        
     }
     
 

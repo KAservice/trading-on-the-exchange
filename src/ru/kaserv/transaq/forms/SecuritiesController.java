@@ -12,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import ru.kaserv.transaq.configuration.StorageConfig;
 import ru.kaserv.transaq.object.Securities;
 
@@ -22,8 +24,13 @@ import ru.kaserv.transaq.object.Securities;
  */
 public class SecuritiesController implements Initializable {
     
+    private IExternalEvent externalEventListner;
+    private boolean flChoice;
     
-        @FXML
+   
+    
+    
+    @FXML
     TableView securityTableView;
     @FXML
     private TableColumn<Securities.Security, String> columnShortName;
@@ -51,6 +58,15 @@ public class SecuritiesController implements Initializable {
     private TableColumn<Securities.Security, String>  columnSecid;
     @FXML   
     private TableColumn<Securities.Security, String>  columnActive;
+    
+    
+    public void setExternalEventListner(IExternalEvent externalEventListner) {
+        this.externalEventListner = externalEventListner;
+    }
+
+    public void setFlChoice(boolean flChoice) {
+        this.flChoice = flChoice;
+    }
 
     /**
      * Initializes the controller class.
@@ -72,8 +88,32 @@ public class SecuritiesController implements Initializable {
         columnActive.setCellValueFactory(new PropertyValueFactory<>("active")); 
         
         StorageConfig storageConfig = StorageConfig.getStorageConfig();   
+  
         securityTableView.setItems(storageConfig.getSecuritiesConfig().getSecuritiesStorage().getObservableList());
-        securityTableView.setItems(storageConfig.getSecuritiesConfig().getSecuritiesStorage().getObservableList());
-    }    
+    }   
+    
+    
+ 
+    
+    @FXML
+    public void handleTableViewOnMouseClicked(MouseEvent event) {
+        if (event.getClickCount()>1) {
+            if (flChoice == true){
+                externalEventListner.ExternalEvent(1, true);
+
+                Stage stage = (Stage) securityTableView.getScene().getWindow();
+                stage.close();                
+            }
+
+        }
+    
+    }
+    
+    public Securities.Security getSelectionElement(){
+        
+        TableView.TableViewSelectionModel<Securities.Security> selectionModel = securityTableView.getSelectionModel();
+        return selectionModel.getSelectedItem();       
+        
+    }
     
 }

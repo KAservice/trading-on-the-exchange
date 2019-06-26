@@ -14,7 +14,7 @@
             <Button layoutX="23.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleButtonSendQueryPortfolioTplusAction" text="Запросить портфель +" />
             <Button layoutX="18.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleButtonOpenPortfolioTplusAction" text="Посмотреть портфель +" />
          </children></AnchorPane>
-                     <TableView fx:id="clientTableView" layoutX="14.0" layoutY="140.0" prefHeight="377.0" prefWidth="590.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <TableView fx:id="clientTableView" layoutX="14.0" layoutY="140.0" onMouseClicked="#handleTableViewOnMouseClicked" prefHeight="377.0" prefWidth="590.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                         <columns>                               
                            <TableColumn fx:id="columnClientTableViewMarket" text="Market" />                                  
                            <TableColumn fx:id="columnClientTableViewCurrency" prefWidth="117.0" text="Currency" />
@@ -30,6 +30,7 @@
       <Button layoutX="223.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleButtonSendQueryPortfolioUnitedAction" text="Запросить объединенный портфель" />
       <Button layoutX="493.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleButtonSendQueryClientLimitsAction" text="Запросить лимиты" />
       <Button layoutX="495.0" layoutY="82.0" mnemonicParsing="false" onAction="#handleButtonOpenClientLimitsAction" text="Посмотреть лимиты" />
+      <Button fx:id="buttonChoiceClient" layoutX="682.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleSelectionClient" text="Выбрать клиента" />
    </children>
                 
 </AnchorPane>

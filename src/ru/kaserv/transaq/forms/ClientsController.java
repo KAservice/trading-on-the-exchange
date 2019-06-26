@@ -16,9 +16,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import ru.kaserv.transaq.command.ClientLimitsCommand;
 import ru.kaserv.transaq.command.PortfolioTplusCommand;
@@ -40,6 +42,12 @@ import transaq.TransaqConnector;
  */
 public class ClientsController implements Initializable {
     
+    private IExternalEvent externalEventListner;
+    private boolean flChoice;
+    
+    @FXML
+    Button buttonChoiceClient;
+    
     @FXML
     TableView clientTableView;
     @FXML
@@ -59,6 +67,19 @@ public class ClientsController implements Initializable {
     private TableColumn<Client, String> columnClientTableViewUnion;      
     @FXML
     private TableColumn<Client, String> columnClientTableViewFortsAcc;   
+    
+    
+
+    public void setExternalEventListner(IExternalEvent externalEventListner) {
+        this.externalEventListner = externalEventListner;
+    }
+
+    public void setFlChoice(boolean flChoice) {
+        this.flChoice = flChoice;
+    }
+    
+    
+    
 
     /**
      * Initializes the controller class.
@@ -303,5 +324,36 @@ public class ClientsController implements Initializable {
         
 
     } 
+    
+    @FXML
+    private void handleSelectionClient(ActionEvent event) { 
+        
+   
+        externalEventListner.ExternalEvent(1, true);
+        
+        Stage stage = (Stage) buttonChoiceClient.getScene().getWindow();
+        stage.close();
+    } 
+    
+    @FXML
+    public void handleTableViewOnMouseClicked(MouseEvent event) {
+        if (event.getClickCount()>1) {
+            if (flChoice == true){
+                externalEventListner.ExternalEvent(1, true);
+
+                Stage stage = (Stage) buttonChoiceClient.getScene().getWindow();
+                stage.close();                
+            }
+
+        }
+    
+    }
+    
+    public Client getSelectionClient(){
+        
+        TableView.TableViewSelectionModel<Client> selectionModel = clientTableView.getSelectionModel();
+        return selectionModel.getSelectedItem();       
+        
+    }
     
 }

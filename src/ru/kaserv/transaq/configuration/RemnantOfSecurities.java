@@ -24,7 +24,7 @@ import ru.kaserv.transaq.object.Trades;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "remnant"
+    "elements"
 })
 @XmlRootElement(name = "RemnantOfSecurities")
 public class RemnantOfSecurities {
