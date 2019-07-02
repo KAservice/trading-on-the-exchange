@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="command">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="alltrades">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="security">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="board" type="xs:string" />
+                    <xs:element name="seccode" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="quotations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="security">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="board" type="xs:string" />
+                    <xs:element name="seccode" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="quotes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="security">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="board" type="xs:string" />
+                    <xs:element name="seccode" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

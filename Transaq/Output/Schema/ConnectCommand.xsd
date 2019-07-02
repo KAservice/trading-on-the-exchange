@@ -1,0 +1,36 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="command">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="login"/>
+        <xs:element type="xs:string" name="password"/>
+        <xs:element type="xs:string" name="host"/>
+        <xs:element type="xs:byte" name="port"/>
+        <xs:element type="xs:string" name="language"/>
+        <xs:element type="xs:string" name="autopos"/>
+        <xs:element type="xs:string" name="micex_registers"/>
+        <xs:element type="xs:string" name="milliseconds"/>
+        <xs:element type="xs:string" name="utc_time"/>
+        <xs:element name="proxy">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="type"/>
+                <xs:attribute type="xs:string" name="addr"/>
+                <xs:attribute type="xs:byte" name="port"/>
+                <xs:attribute type="xs:string" name="login"/>
+                <xs:attribute type="xs:string" name="password"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:byte" name="rqdelay"/>
+        <xs:element type="xs:byte" name="session_timeout"/>
+        <xs:element type="xs:byte" name="request_timeout"/>
+        <xs:element type="xs:byte" name="push_u_limits"/>
+        <xs:element type="xs:byte" name="push_pos_equity"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

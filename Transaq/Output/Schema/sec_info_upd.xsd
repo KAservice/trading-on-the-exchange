@@ -1,0 +1,15 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sec_info_upd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="secid" type="xs:unsignedShort" />
+        <xs:element name="seccode" type="xs:string" />
+        <xs:element name="market" type="xs:unsignedByte" />
+        <xs:element name="buy_deposit" type="xs:decimal" />
+        <xs:element name="sell_deposit" type="xs:decimal" />
+        <xs:element name="minprice" type="xs:decimal" />
+        <xs:element name="maxprice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

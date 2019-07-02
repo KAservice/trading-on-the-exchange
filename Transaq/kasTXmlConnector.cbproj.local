@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019.04.03 12:08:23.025.cpp,C:\Users\1\Documents\RAD Studio\Projects\File1.cpp=K:\DLL\Transaq\File1.cpp</Transaction>
+    <Transaction>2019.04.03 12:08:28.508.cbproj,C:\Users\1\Documents\RAD Studio\Projects\Project1.cbproj=K:\DLL\Transaq\kasTXmlConnector.cbproj</Transaction>
+    <Transaction>2019.04.03 12:08:41.007.cpp,K:\DLL\Transaq\File1.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

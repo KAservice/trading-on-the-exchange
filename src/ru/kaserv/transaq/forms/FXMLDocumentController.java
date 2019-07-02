@@ -256,7 +256,8 @@ public class FXMLDocumentController implements Initializable {
     transaqConnector.SetCallback();
     transaqConnector.setQueue(queue);
     transaqConnector.setBlockObject(blockObject);
-    String logPath="K:\\DLL\\Transaq\\Output\\Log\\"; 
+    String logPath="D:\\trading-on-the-exchange\\Transaq\\Output\\Log\\"; 
+    
     
     byte[] b=logPath.getBytes();
     transaqConnector.Initialize(b, 3);
@@ -563,7 +564,8 @@ public class FXMLDocumentController implements Initializable {
     
         public static void JNICallTest()
             {
-            File file = new File("K://DLL//Transaq//Output//kasTXmlConnector.dll");
+            File file = new File("D://trading-on-the-exchange//Transaq//Output//kasTXmlConnector.dll");
+            
             if (file.exists()) {
                     try {
                     String path = file.getAbsolutePath();
@@ -820,7 +822,7 @@ public class FXMLDocumentController implements Initializable {
     transaqConnector.SetCallback();
     transaqConnector.setQueue(queue);
     transaqConnector.setBlockObject(blockObject);
-    String logPath="K:\\DLL\\Transaq\\Output\\Log\\"; 
+    String logPath="D:\\trading-on-the-exchange\\Transaq\\Output\\Log\\"; 
     
     byte[] b=logPath.getBytes();
     transaqConnector.Initialize(b, 3);

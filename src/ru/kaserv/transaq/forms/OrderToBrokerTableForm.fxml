@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.*?>
+
+<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.OrderToBrokerTableFormController">
+   <top>
+       <Pane prefHeight="175.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <children>
+                <Label fx:id="captionLabel" layoutX="23.0" layoutY="37.0" text="Label" />
+            <Button layoutX="24.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleNewOrderToBroker" text="Новый" />
+            </children>
+       </Pane>
+   </top>
+   <bottom>
+      <Pane prefHeight="82.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+        <TableView fx:id="orderTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="columnOrderTableViewBoard" prefWidth="75.0" text="Board" />
+                <TableColumn fx:id="columnOrderTableViewSeccode" prefWidth="75.0" text="Seccode" />
+                <TableColumn fx:id="columnOrderTableViewClient" prefWidth="75.0" text="Client" />
+                <TableColumn fx:id="columnOrderTableViewUnion" prefWidth="75.0" text="Union" />
+                <TableColumn fx:id="columnOrderTableViewTransactionid" prefWidth="75.0" text="TransactionID" />
+                <TableColumn fx:id="columnOrderTableViewPrice" prefWidth="75.0" text="Price" /> 
+                <TableColumn fx:id="columnOrderTableViewQuantity" prefWidth="75.0" text="Quantity" />
+                <TableColumn fx:id="columnOrderTableViewBuysell" prefWidth="75.0" text="Buysell" />
+                <TableColumn fx:id="columnOrderTableViewBrokerref" prefWidth="75.0" text="Brokerref" />
+                <TableColumn fx:id="columnOrderTableViewUnifilled" prefWidth="75.0" text="Unifilled" />  
+                <TableColumn fx:id="columnOrderTableViewExpdate" prefWidth="75.0" text="Expdate" />
+                <TableColumn fx:id="columnOrderTableViewHidden" prefWidth="75.0" text="Hidden" />
+            </columns>
+        </TableView>
+   </center>
+</BorderPane>

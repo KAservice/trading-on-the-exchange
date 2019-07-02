@@ -1,0 +1,21 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="pits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="pit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="market" type="xs:unsignedByte" />
+              <xs:element name="decimals" type="xs:unsignedByte" />
+              <xs:element name="minstep" type="xs:decimal" />
+              <xs:element name="lotsize" type="xs:unsignedInt" />
+              <xs:element name="point_cost" type="xs:decimal" />
+            </xs:sequence>
+            <xs:attribute name="seccode" type="xs:string" use="required" />
+            <xs:attribute name="board" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

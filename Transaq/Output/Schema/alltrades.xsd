@@ -1,0 +1,24 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="alltrades">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="trade" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="seccode"/>
+              <xs:element type="xs:int" name="tradeno"/>
+              <xs:element type="xs:string" name="time"/>
+              <xs:element type="xs:string" name="board"/>
+              <xs:element type="xs:decimal" name="price"/>
+              <xs:element type="xs:int" name="quantity"/>
+              <xs:element type="xs:string" name="buysell"/>
+              <xs:element type="xs:int" name="openinterest"/>
+              <xs:element type="xs:string" name="period"/>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="secid" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -28,7 +28,7 @@
       <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#openTradesTable" text="Сделки" />
       <Button layoutX="82.0" layoutY="36.0" mnemonicParsing="false" onAction="#openOrdersTable" prefHeight="25.0" prefWidth="56.0" text="Заявки" />
       <Button layoutX="300.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleNewElement" text="Новый" />
-      <Button layoutX="367.0" layoutY="36.0" mnemonicParsing="false" text="Заявки брокеру" />
+      <Button layoutX="367.0" layoutY="36.0" mnemonicParsing="false" onAction="#openOrdersToBrokerTable" text="Заявки брокеру" />
       <Button layoutX="480.0" layoutY="36.0" mnemonicParsing="false" text="Заявки на бирже" />
    </children>
 </AnchorPane>

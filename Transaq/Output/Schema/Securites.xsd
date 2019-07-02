@@ -1,0 +1,41 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="securities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="security" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="seccode"/>
+              <xs:element type="xs:string" name="instrclass"/>
+              <xs:element type="xs:string" name="board"/>
+              <xs:element type="xs:string" name="market"/>
+              <xs:element type="xs:string" name="shortname"/>
+              <xs:element type="xs:int" name="decimals"/>
+              <xs:element type="xs:decimal" name="minstep"/>
+              <xs:element type="xs:int" name="lotsize"/>
+              <xs:element type="xs:decimal" name="point_cost"/>
+              <xs:element name="opmask">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="usecredit" use="optional"/>
+                      <xs:attribute type="xs:string" name="bymarket" use="optional"/>
+                      <xs:attribute type="xs:string" name="nosplit" use="optional"/>
+                      <xs:attribute type="xs:string" name="fok" use="optional"/>
+                      <xs:attribute type="xs:string" name="ioc" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="sectype"/>
+              <xs:element type="xs:string" name="sec_tz"/>
+              <xs:element type="xs:int" name="quotestype"/>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="secid" use="optional"/>
+            <xs:attribute type="xs:string" name="active" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

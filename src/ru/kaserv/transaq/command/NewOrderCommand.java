@@ -36,13 +36,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
         "unfilled",
         "expdate"
     })
-    @XmlRootElement(name = "commaand")
+    @XmlRootElement(name = "command")
     public class NewOrderCommand {
+
+
+        
+     
 
         @XmlAttribute(name = "id")
         protected String id = "neworder";    
 
-        protected NewOrderCommand.Security security;
+        protected NewOrderCommand.Security security = new Security();
             
         protected String client;
         protected String union;
@@ -73,7 +77,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
             
             protected String board;
             protected String seccode;
-            
+
+            public String getBoard() {
+                return board;
+            }
+
+            public void setBoard(String board) {
+                this.board = board;
+            }
+
+            public String getSeccode() {
+                return seccode;
+            }
+
+            public void setSeccode(String seccode) {
+                this.seccode = seccode;
+            }
+  
         }
         
         
@@ -96,5 +116,104 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
         }
 
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Security getSecurity() {
+        return security;
+    }
+
+    public void setSecurity(Security security) {
+        this.security = security;
+    }
+
+    public String getClient() {
+        return client;
+    }
+
+    public void setClient(String client) {
+        this.client = client;
+    }
+
+    public String getUnion() {
+        return union;
+    }
+
+    public void setUnion(String union) {
+        this.union = union;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Integer getHidden() {
+        return hidden;
+    }
+
+    public void setHidden(Integer hidden) {
+        this.hidden = hidden;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getBuysell() {
+        return buysell;
+    }
+
+    public void setBuysell(String buysell) {
+        this.buysell = buysell;
+    }
+
+    public String getBrokerref() {
+        return brokerref;
+    }
+
+    public void setBrokerref(String brokerref) {
+        this.brokerref = brokerref;
+    }
+
+    public String getUnfilled() {
+        return unfilled;
+    }
+
+    public void setUnfilled(String unfilled) {
+        this.unfilled = unfilled;
+    }
+
+    public Date getExpdate() {
+        return expdate;
+    }
+
+    public void setExpdate(Date expdate) {
+        this.expdate = expdate;
+    }
+
+    public Long getTransactionid() {
+        return transactionid;
+    }
+
+    public void setTransactionid(Long transactionid) {
+        this.transactionid = transactionid;
+    }
+    
+    
+    
     
 }

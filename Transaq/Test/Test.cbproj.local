@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019.04.02 14:59:57.298.cpp,C:\Users\1\Documents\RAD Studio\Projects\Unit1.cpp=K:\DLL\Transaq\Test\MainForm.cpp</Transaction>
+    <Transaction>2019.04.02 14:59:57.298.h,C:\Users\1\Documents\RAD Studio\Projects\Unit1.h=K:\DLL\Transaq\Test\MainForm.h</Transaction>
+    <Transaction>2019.04.02 14:59:57.298.dfm,C:\Users\1\Documents\RAD Studio\Projects\Unit1.dfm=K:\DLL\Transaq\Test\MainForm.dfm</Transaction>
+    <Transaction>2019.04.02 15:00:08.166.cbproj,C:\Users\1\Documents\RAD Studio\Projects\Project1.cbproj=K:\DLL\Transaq\Test\Test.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

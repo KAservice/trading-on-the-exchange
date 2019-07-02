@@ -1,0 +1,33 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="positions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="money_position">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="client" type="xs:string" />
+              <xs:element name="union" />
+              <xs:element name="markets">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="market" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asset" type="xs:string" />
+              <xs:element name="shortname" type="xs:string" />
+              <xs:element name="register" type="xs:string" />
+              <xs:element name="saldoin" type="xs:decimal" />
+              <xs:element name="bought" type="xs:decimal" />
+              <xs:element name="sold" type="xs:decimal" />
+              <xs:element name="saldo" type="xs:decimal" />
+              <xs:element name="ordbuy" type="xs:decimal" />
+              <xs:element name="ordbuycond" type="xs:decimal" />
+              <xs:element name="comission" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

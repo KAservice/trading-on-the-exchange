@@ -1,0 +1,46 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="quotations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="quotation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="board" type="xs:string" />
+              <xs:element name="seccode" type="xs:string" />
+              <xs:element name="point_cost" type="xs:decimal" />
+              <xs:element name="tradingstatus" type="xs:unsignedByte" />
+              <xs:element name="last" type="xs:decimal" />
+              <xs:element name="quantity" type="xs:unsignedByte" />
+              <xs:element name="time" type="xs:string" />
+              <xs:element name="change" type="xs:decimal" />
+              <xs:element name="priceminusprevwaprice" type="xs:decimal" />
+              <xs:element name="bid" type="xs:decimal" />
+              <xs:element name="biddepth" type="xs:unsignedShort" />
+              <xs:element name="biddeptht" type="xs:unsignedShort" />
+              <xs:element name="numbids" type="xs:unsignedByte" />
+              <xs:element name="offer" type="xs:decimal" />
+              <xs:element name="offerdepth" type="xs:unsignedByte" />
+              <xs:element name="offerdeptht" type="xs:unsignedShort" />
+              <xs:element name="numoffers" type="xs:unsignedByte" />
+              <xs:element name="open" type="xs:decimal" />
+              <xs:element name="high" type="xs:decimal" />
+              <xs:element name="low" type="xs:decimal" />
+              <xs:element name="voltoday" type="xs:unsignedShort" />
+              <xs:element name="numtrades" type="xs:unsignedShort" />
+              <xs:element name="valtoday" type="xs:decimal" />
+              <xs:element name="openpositions" type="xs:unsignedInt" />
+              <xs:element name="deltapositions" type="xs:short" />
+              <xs:element name="waprice" type="xs:decimal" />
+              <xs:element name="closeprice" type="xs:decimal" />
+              <xs:element name="marketpricetoday" type="xs:decimal" />
+              <xs:element name="lcurrentprice" type="xs:decimal" />
+              <xs:element name="buydeposit" type="xs:decimal" />
+              <xs:element name="selldeposit" type="xs:decimal" />
+            </xs:sequence>
+            <xs:attribute name="secid" type="xs:unsignedShort" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
