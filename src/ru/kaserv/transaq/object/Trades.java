@@ -234,7 +234,12 @@ public class Trades {
         private BigDecimal profitAll = BigDecimal.ZERO;   
         
         @XmlTransient
-        private BigDecimal costPriceUnit = BigDecimal.ZERO; 
+        private BigDecimal exchangeCommision = BigDecimal.ZERO; 
+        @XmlTransient
+        private BigDecimal brokerCommision = BigDecimal.ZERO; 
+        
+        @XmlTransient
+        private BigDecimal costPriceUnit = BigDecimal.ZERO; //average purchase price
 
         /**
          * Gets the value of the secid property.
@@ -754,6 +759,22 @@ public class Trades {
 
         public void setCostPriceUnit(BigDecimal costPriceUnit) {
             this.costPriceUnit = costPriceUnit;
+        }
+
+        public BigDecimal getExchangeCommision() {
+            return exchangeCommision;
+        }
+
+        public void setExchangeCommision(BigDecimal exchangeCommision) {
+            this.exchangeCommision = exchangeCommision;
+        }
+
+        public BigDecimal getBrokerCommision() {
+            return brokerCommision;
+        }
+
+        public void setBrokerCommision(BigDecimal brokerCommision) {
+            this.brokerCommision = brokerCommision;
         }
         
         

@@ -6,9 +6,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.SecuritiesForTradesOrdersController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ru.kaserv.transaq.forms.SecuritiesForQuotesController">
    <children>
-      <TableView fx:id="securityTableView" layoutX="14.0" layoutY="225.0" prefHeight="392.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="67.0">
+      <TableView fx:id="securitiesTableView" layoutX="14.0" layoutY="225.0" prefHeight="392.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="67.0">
         <columns>
                               <TableColumn fx:id="columnShortName" prefWidth="158.0" text="ShortName" />
                               <TableColumn fx:id="columnSecTz" minWidth="0.0" prefWidth="172.0" text="SecTz" />
@@ -25,10 +25,8 @@
                               <TableColumn fx:id="columnActive" minWidth="0.0" prefWidth="239.0" text="Active" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#openTradesTable" text="Сделки" />
-      <Button layoutX="82.0" layoutY="36.0" mnemonicParsing="false" onAction="#openOrdersTable" prefHeight="25.0" prefWidth="56.0" text="Заявки" />
-      <Button layoutX="300.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleNewElement" text="Новый" />
-      <Button layoutX="367.0" layoutY="36.0" mnemonicParsing="false" onAction="#openOrdersToBrokerTable" text="Заявки брокеру" />
-      <Button layoutX="480.0" layoutY="36.0" mnemonicParsing="false" onAction="#openOrdersToExchangeTable" text="Заявки на бирже" />
-   </children>
+      <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#openQuotesTable" text="Стакан" />
+      <Button layoutX="89.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleUnSubscribeForQuotes" text="Отписаться" />
+
+   </children>    
 </AnchorPane>

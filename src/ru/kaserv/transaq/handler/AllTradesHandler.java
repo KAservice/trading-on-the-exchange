@@ -27,7 +27,7 @@ public class AllTradesHandler {
     AllTradesStorage allTradesStorage = allTradesStorageConfig.getAllTradesStorage();
     
     allTradesStorage.add(trade);
-    System.out.println("Добавили запись в таблицу alltrades: " +trade.getTime());         
+    //System.out.println("Добавили запись в таблицу alltrades: " +trade.getTime());         
     }
     
 }

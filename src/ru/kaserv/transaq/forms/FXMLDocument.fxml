@@ -136,6 +136,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#handleMainMenuOpenTableClientsForTradesOrders" text="Клиенты для сделок / заявок" />
               <MenuItem mnemonicParsing="false" onAction="#handleMainMenuOpenTableSecuritiesForAllTrades" text="Инструменты для всех сделок" />
+              <MenuItem mnemonicParsing="false" onAction="#handleMainMenuOpenTableSecuritiesForQuotes" text="Инструменты для стакана" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

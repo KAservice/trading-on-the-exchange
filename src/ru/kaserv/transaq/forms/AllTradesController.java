@@ -7,13 +7,17 @@ package ru.kaserv.transaq.forms;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import ru.kaserv.transaq.command.SubscribeCommand;
+import ru.kaserv.transaq.command.SubscribeCommandSender;
 import ru.kaserv.transaq.object.Alltrades;
+import ru.kaserv.transaq.object.Securities;
 import ru.kaserv.transaq.storage.AllTradesStorage;
 
 
@@ -84,5 +88,8 @@ public class AllTradesController implements Initializable {
      captionLabel.setText(caption);
 
     } 
+    
+    
+
     
 }

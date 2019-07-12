@@ -42,6 +42,52 @@ public class XmlCommandFactory {
     return result;    
     }
     
+    public String convertObjectNewOrderCommandToXml(NewOrderCommand command) {
+        String result="";
+        try {
+            JAXBContext context = JAXBContext.newInstance(NewOrderCommand.class);
+            Marshaller marshaller = context.createMarshaller();
+            // устанавливаем флаг для читабельного вывода XML в JAXB
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            
+            
+            StringWriter sw = new StringWriter();
+ 
+            // маршаллинг объекта в файл
+            marshaller.marshal(command, sw);
+            result = sw.toString();
+        } 
+        catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        
+    return result;    
+    }
+    
+    
+    public String convertSubscribeCommandToXml(SubscribeCommand command) {
+        String result="";
+        try {
+            JAXBContext context = JAXBContext.newInstance(SubscribeCommand.class);
+            Marshaller marshaller = context.createMarshaller();
+            // устанавливаем флаг для читабельного вывода XML в JAXB
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            
+            
+            StringWriter sw = new StringWriter();
+ 
+            // маршаллинг объекта в файл
+            marshaller.marshal(command, sw);
+            result = sw.toString();
+        } 
+        catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        
+    return result;    
+    }    
+    
+    
 }
 
 

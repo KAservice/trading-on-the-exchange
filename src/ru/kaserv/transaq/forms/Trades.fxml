@@ -29,6 +29,8 @@
         <TableColumn fx:id="columnTradeTableViewCostPriceBuyTrade" minWidth="0.0" prefWidth="84.0" text="Себест. пок" />
         <TableColumn fx:id="columnTradeTableViewCostPriceSellTrade" minWidth="0.0" prefWidth="109.0" text="Себест. продажи" />
         
+        <TableColumn fx:id="columnTradeTableViewExchangeCommision" minWidth="0.0" prefWidth="84.0" text="- бирже" />
+        <TableColumn fx:id="columnTradeTableViewBrokerCommision" minWidth="0.0" prefWidth="109.0" text="- брокеру" />
         
         <TableColumn fx:id="columnTradeTableViewCostPriceUnit" minWidth="0.0" prefWidth="141.0" text="Себест." />
         <TableColumn fx:id="columnTradeTableViewPrice" minWidth="0.0" prefWidth="141.0" text="Price" />

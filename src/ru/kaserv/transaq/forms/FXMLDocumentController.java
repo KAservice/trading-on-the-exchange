@@ -771,6 +771,25 @@ public class FXMLDocumentController implements Initializable {
         newWindow.show();
         }
     
+        @FXML
+    private void handleMainMenuOpenTableSecuritiesForQuotes(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();  
+        newWindow.setTitle("Инструменты для стакана");
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("SecuritiesForQuotes.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }
+    
     @FXML
     private void handleMainMenuOpenTableClients(ActionEvent event) { 
                

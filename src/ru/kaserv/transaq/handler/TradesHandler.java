@@ -6,8 +6,6 @@
 package ru.kaserv.transaq.handler;
 
 
-import java.io.File;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Iterator;
@@ -18,7 +16,9 @@ import ru.kaserv.transaq.configuration.ClientsForTradesOrders;
 import ru.kaserv.transaq.configuration.RemnantOfSecurities;
 import ru.kaserv.transaq.configuration.RemnantOfSecuritiesBuilder;
 import ru.kaserv.transaq.configuration.StorageConfig;
+import ru.kaserv.transaq.object.Orders;
 import ru.kaserv.transaq.object.Trades;
+import ru.kaserv.transaq.storage.OrderToExchangeStorage;
 import ru.kaserv.transaq.storage.TradesStorage;
 
 
@@ -56,13 +56,39 @@ public class TradesHandler {
             if (trade.getBuysell().equals("S")){
                 handleSell(trade,tradesList );
             }
-     
+            
+            
+            
+        //average purchase price 
         if(trade.getQuantityAll() != 0) {
             trade.setCostPriceUnit(trade.getCostPriceAll().divide(BigDecimal.valueOf(trade.getQuantityAll()),3,BigDecimal.ROUND_HALF_UP));
         } 
             
     tradesStorage.add(trade);
-    System.out.println("Добавили запись в таблицу сделок: " +trade.getTime()); 
+   // System.out.println("Добавили запись в таблицу сделок: " +trade.getTime()); 
+    
+    
+        OrderToExchangeStorage ordersToExchangeStorage = securityConfig.getOrderToExchangeStorage();
+        
+        List<Orders.Order> elements = ordersToExchangeStorage.getObservableList();
+        
+        for(int i = 0; i < elements.size(); i++){
+            Orders.Order el = elements.get(i);
+            if (el.getOrderno() == (long) trade.getOrderno()){
+                
+                if (el.getQuantity() == trade.getQuantity()){
+                    elements.remove(i);
+                    break;                    
+                }
+                
+                if (el.getQuantity() >= trade.getQuantity()){
+                    el.setQuantity(el.getQuantity() - trade.getQuantity());
+                    break;                    
+                }              
+ 
+            }
+        }
+    
         
     }
     
@@ -79,6 +105,11 @@ public class TradesHandler {
                     handleSecondBuy(trade, tradesList);
 
                 }
+            
+    addCommission(trade);
+    trade.setProfitTrade(trade.getProfitTrade().subtract(trade.getExchangeCommision())); 
+    trade.setProfitTrade(trade.getProfitTrade().subtract(trade.getBrokerCommision())); 
+    trade.setProfitAll(trade.getProfitTrade());
     }   
  
     void handleSell(Trades.Trade trade, List<Trades.Trade> tradesList ) {
@@ -90,7 +121,12 @@ public class TradesHandler {
                 else{
                     
                     handleSecondSell(trade, tradesList);
-                }    
+                } 
+                
+                
+    trade.setProfitTrade(trade.getProfitTrade().subtract(trade.getExchangeCommision())); 
+    trade.setProfitTrade(trade.getProfitTrade().subtract(trade.getBrokerCommision())); 
+    trade.setProfitAll(trade.getProfitTrade());                
     } 
 
     void handleFirstBuy(Trades.Trade trade, List<Trades.Trade> tradesList ){
@@ -155,7 +191,8 @@ public class TradesHandler {
                         
                     }
                     
-    trade.setProfitAll(trade.getProfitTrade());
+                    
+
              
                     
     }
@@ -222,7 +259,8 @@ public class TradesHandler {
                         
                     }
                     
-    trade.setProfitAll((tradesList.get(tradesList.size()-1).getProfitAll()).add(trade.getProfitTrade()));
+                    
+                    
 
     }
 
@@ -274,8 +312,7 @@ public class TradesHandler {
             }
             
         }
-            
-    trade.setProfitAll(trade.getProfitTrade());    
+   
     }
 
     void handleSecondSell(Trades.Trade trade, List<Trades.Trade> tradesList ){
@@ -326,8 +363,8 @@ public class TradesHandler {
             }
             
         }
-            
-        trade.setProfitAll((tradesList.get(tradesList.size()-1).getProfitAll()).add(trade.getProfitTrade()));      
+        
+      
     
     }
     
@@ -381,6 +418,25 @@ public class TradesHandler {
             
         }   
 
-    }    
+    }   
+    
+   void addCommission(Trades.Trade trade){
+       
+       if (trade.getBuysell().equals("S")){
+           
+            trade.setExchangeCommision(trade.getSellSum().multiply(new BigDecimal(0.00154)));                     //0,00154%
+            trade.setBrokerCommision(BigDecimal.valueOf(trade.getQuantity()).multiply(new BigDecimal(0.0075)));   //45 коп
+           
+       }
+       
+
+       if (trade.getBuysell().equals("B")){
+           
+            trade.setExchangeCommision(trade.getBuySum().multiply(new BigDecimal(0.00154)));
+            trade.setBrokerCommision(BigDecimal.valueOf(trade.getQuantity()).multiply(new BigDecimal(0.0075)));  
+       
+       }      
+       
+   }
     
 }

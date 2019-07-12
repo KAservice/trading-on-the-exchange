@@ -22,8 +22,11 @@ import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import ru.kaserv.transaq.command.SubscribeCommand;
+import ru.kaserv.transaq.command.SubscribeCommandSender;
 import ru.kaserv.transaq.configuration.SecurityForAllTrades;
 import ru.kaserv.transaq.configuration.StorageConfig;
+import ru.kaserv.transaq.object.Securities;
 
 /**
  * FXML Controller class
@@ -191,6 +194,29 @@ public class SecuritiesForAllTradesController implements Initializable {
         newWindow.show();
         }
         
+    @FXML
+    public void handleUnSubscribeForAlltrades (ActionEvent event){
+        
+        TableView.TableViewSelectionModel<SecurityForAllTrades> selectionModel = securitiesTableView.getSelectionModel();
+        SecurityForAllTrades security_for_all_trades = selectionModel.getSelectedItem(); 
+        
+        Securities.Security security = security_for_all_trades.getSecurity();
+        
+        SubscribeCommand command =  new SubscribeCommand();
+        command.setId("unsubscribe");
+                
+        SubscribeCommand.Alltrades all_tr = new SubscribeCommand.Alltrades();        
+        SubscribeCommand.Alltrades.Security sec = new SubscribeCommand.Alltrades.Security();
+        sec.setBoard(security.getBoard());
+        sec.setSeccode(security.getSeccode());
+        
+        all_tr.getSecurity().add(sec);  
+        
+        command.setAlltrades(all_tr);
 
+        SubscribeCommandSender sender = new SubscribeCommandSender();
+        sender.sendCommand(command);
+  
+    }
     
 }

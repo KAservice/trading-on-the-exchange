@@ -27,7 +27,7 @@ public class StorageConfig {
     
     //список инструментов по которым надо alltrades  и стакан в принципе попадает сюда
     private SecuritiesForAllTrades securitiesForAllTrades;
-    //private securitiesForQuotes;
+    private SecuritiesForQuotes securitiesForQuotes;
     //private securitiesForQuotations;
     
     
@@ -46,6 +46,7 @@ public class StorageConfig {
    
         clientsForTradesOrders = new ClientsForTradesOrders();      
         securitiesForAllTrades = new SecuritiesForAllTrades();
+        securitiesForQuotes = new SecuritiesForQuotes();
         
         portfolioTplusStorageConfig = new PortfolioTplusStorageConfig();
         portfolioUnitedStorageConfig = new PortfolioUnitedStorageConfig();
@@ -56,16 +57,7 @@ public class StorageConfig {
         return clientsStorageConfig;
     }
 
-   
 
-       
-    
-    
-    
-    
-    
-    
-    
     
     public static StorageConfig getStorageConfig() {
         return storageConfig;
@@ -82,6 +74,11 @@ public class StorageConfig {
     public SecuritiesForAllTrades getSecuritiesForAllTrades() {
         return securitiesForAllTrades;
     }
+
+    public SecuritiesForQuotes getSecuritiesForQuotes() {
+        return securitiesForQuotes;
+    }
+    
 
     public ClientsForTradesOrders getClientsForTradesOrders() {
         return clientsForTradesOrders;

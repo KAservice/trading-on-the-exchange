@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<command id="subscribe">
+<alltrades>
+    <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+</security>
+    <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+    </security>
+        <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+    </security>
+</alltrades>
+<quotations>
+    <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+    </security>
+    <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+    </security>
+</quotations>
+<quotes>
+    <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+    </security>
+    <security>
+        <board> идентификатор режима торгов</board>
+        <seccode>код инструмента</seccode>
+    </security>
+</quotes>
+</command>

@@ -7,6 +7,7 @@ package ru.kaserv.transaq.forms;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -14,6 +15,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import ru.kaserv.transaq.command.SubscribeCommand;
+import ru.kaserv.transaq.command.SubscribeCommandSender;
 import ru.kaserv.transaq.configuration.StorageConfig;
 import ru.kaserv.transaq.object.Securities;
 
@@ -113,6 +116,57 @@ public class SecuritiesController implements Initializable {
         
         TableView.TableViewSelectionModel<Securities.Security> selectionModel = securityTableView.getSelectionModel();
         return selectionModel.getSelectedItem();       
+        
+    }
+    
+    
+    @FXML
+    public void handleCreateSubscribeForAlltrades (ActionEvent event){
+        
+        TableView.TableViewSelectionModel<Securities.Security> selectionModel = securityTableView.getSelectionModel();
+        Securities.Security security = selectionModel.getSelectedItem();     
+        
+        SubscribeCommand command =  new SubscribeCommand();
+        command.setId("subscribe");
+                
+        SubscribeCommand.Alltrades all_tr = new SubscribeCommand.Alltrades();        
+        SubscribeCommand.Alltrades.Security sec = new SubscribeCommand.Alltrades.Security();
+        sec.setBoard(security.getBoard());
+        sec.setSeccode(security.getSeccode());
+        
+        all_tr.getSecurity().add(sec);  
+        
+        command.setAlltrades(all_tr);
+
+        SubscribeCommandSender sender = new SubscribeCommandSender();
+        sender.sendCommand(command);
+        
+
+        
+    }
+    
+   @FXML
+    public void handleCreateSubscribeForQuotes (ActionEvent event){
+        
+        TableView.TableViewSelectionModel<Securities.Security> selectionModel = securityTableView.getSelectionModel();
+        Securities.Security security = selectionModel.getSelectedItem();     
+        
+        SubscribeCommand command =  new SubscribeCommand();
+        command.setId("subscribe");
+                
+        SubscribeCommand.Quotes quotes = new SubscribeCommand.Quotes();        
+        SubscribeCommand.Quotes.Security sec = new SubscribeCommand.Quotes.Security();
+        sec.setBoard(security.getBoard());
+        sec.setSeccode(security.getSeccode());
+        
+        quotes.getSecurity().add(sec);  
+        
+        command.setQuotes(quotes);
+
+        SubscribeCommandSender sender = new SubscribeCommandSender();
+        sender.sendCommand(command);
+        
+
         
     }
     

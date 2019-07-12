@@ -100,7 +100,12 @@ public class TradesController implements Initializable {
     @FXML
     private TableColumn<Trades.Trade, String> columnTradeTableViewProfitAllTrade;    
     @FXML
-    private TableColumn<Trades.Trade, String> columnTradeTableViewCostPriceUnit;    
+    private TableColumn<Trades.Trade, String> columnTradeTableViewCostPriceUnit;   
+    
+    @FXML
+    private TableColumn<Trades.Trade, String> columnTradeTableViewExchangeCommision;    
+    @FXML
+    private TableColumn<Trades.Trade, String> columnTradeTableViewBrokerCommision; 
     
 
     /**
@@ -144,7 +149,8 @@ public class TradesController implements Initializable {
         
         columnTradeTableViewCostPriceUnit.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("costPriceUnit"));
         
-        
+        columnTradeTableViewExchangeCommision.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("exchangeCommision"));
+        columnTradeTableViewBrokerCommision.setCellValueFactory(new PropertyValueFactory<Trades.Trade, String>("brokerCommision"));    
 
     }   
 

@@ -137,7 +137,8 @@ public class OrderToBrokerTableFormController implements Initializable {
                
     
         
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage();  
+        newWindow.setTitle("Заявка брокеру");
         //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderToBrokerElementForm.fxml"));
         Parent root = null;

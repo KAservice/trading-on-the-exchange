@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import java.math.BigDecimal;
 import static java.math.BigDecimal.ZERO;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 /**
@@ -156,6 +157,9 @@ public class Quotes {
         @XmlAttribute(name = "secid", required = true)
         @XmlSchemaType(name = "unsignedShort")
         protected int secid;
+        @XmlTransient
+        protected int myQuantityOrder;
+        
 
         public Quote() {
             this.board = "";
@@ -356,6 +360,16 @@ public class Quotes {
         public void setSecid(int value) {
             this.secid = value;
         }
+
+        public int getMyQuantityOrder() {
+            return myQuantityOrder;
+        }
+
+        public void setMyQuantityOrder(int myQuantityOrder) {
+            this.myQuantityOrder = myQuantityOrder;
+        }
+        
+        
 
     }
 

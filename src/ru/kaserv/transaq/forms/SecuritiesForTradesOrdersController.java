@@ -336,8 +336,8 @@ public class SecuritiesForTradesOrdersController implements Initializable {
 
         OrderToBrokerTableFormController controller = loader.getController();
         controller.setOrdersStorage(securityForTradesOrders.getOrderToBrokerStorage());
-        //controller.setClient(clientForTradesOrders.getClient());
-        //controller.setSecurity(securityForTradesOrders.getSecurity());
+        controller.setClient(clientForTradesOrders.getClient());
+        controller.setSecurity(securityForTradesOrders.getSecurity());
 
         
 
@@ -347,8 +347,50 @@ public class SecuritiesForTradesOrdersController implements Initializable {
         newWindow.setScene(scene);
         newWindow.show();
         
-        //controller.setLabelForm("Заявки брокеру для инструмента: "+securityForTradesOrders.getSecurity().getBoard()+" "+securityForTradesOrders.getSecurity().getSeccode()+
-        //        ", клиент: "+clientForTradesOrders.getClient().getId());
+        controller.setLabelForm("Заявки брокеру для инструмента: "+securityForTradesOrders.getSecurity().getBoard()+" "+securityForTradesOrders.getSecurity().getSeccode()+
+                ", клиент: "+clientForTradesOrders.getClient().getId());
+    }
+    
+    
+        @FXML
+    private void openOrdersToExchangeTable(ActionEvent event){
+        
+        TableView.TableViewSelectionModel<SecurityForTradesOrders> selectionModel = securityTableView.getSelectionModel();
+        SecurityForTradesOrders securityForTradesOrders = selectionModel.getSelectedItem();
+
+
+
+        Stage newWindow = new Stage();    
+
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderToExchangeTableForm.fxml"));
+        Parent root = null;
+   
+            try {
+                root = loader.load();        
+            }
+            catch (IOException err){
+                
+                System.out.println("ошибка " + err);
+                err.printStackTrace();
+                
+            }
+
+        OrderToExchangeTableFormController controller = loader.getController();
+        controller.setOrdersStorage(securityForTradesOrders.getOrderToExchangeStorage());
+        controller.setClient(clientForTradesOrders.getClient());
+        controller.setSecurity(securityForTradesOrders.getSecurity());
+
+        
+
+            
+            
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        
+        controller.setLabelForm("Заявки на бирже для инструмента: "+securityForTradesOrders.getSecurity().getBoard()+" "+securityForTradesOrders.getSecurity().getSeccode()+
+                ", клиент: "+clientForTradesOrders.getClient().getId());
     }
     
 }

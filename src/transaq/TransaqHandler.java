@@ -5,6 +5,7 @@
  */
 package transaq;
 
+import java.util.Collections;
 import ru.kaserv.transaq.handler.AllTradesHandler;
 import ru.kaserv.transaq.handler.BoardsHandler;
 import ru.kaserv.transaq.handler.ClientLimitsHandler;
@@ -12,6 +13,7 @@ import ru.kaserv.transaq.handler.ClientsHandler;
 import ru.kaserv.transaq.handler.OrdersHandler;
 import ru.kaserv.transaq.handler.PortfolioTplusHandler;
 import ru.kaserv.transaq.handler.PortfolioUnitedHandler;
+import ru.kaserv.transaq.handler.QuotesHandler;
 import ru.kaserv.transaq.object.Securities;
 import ru.kaserv.transaq.object.Alltrades;
 import ru.kaserv.transaq.object.Boards;
@@ -24,6 +26,7 @@ import ru.kaserv.transaq.handler.SecuritiesHandler;
 import ru.kaserv.transaq.handler.TradesHandler;
 import ru.kaserv.transaq.object.ClientLimits;
 import ru.kaserv.transaq.object.PortfolioUnited;
+import ru.kaserv.transaq.object.Quotes;
 
 /**
  *
@@ -136,7 +139,11 @@ public class TransaqHandler implements Runnable {
         typeData1 = typeData.substring(1,typeData.length());
         }
         
-    if (typeData1.equals("securities") == true){    
+    boolean flProcessed = false;    
+        
+    if (typeData1.equals("securities") == true){ 
+        
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         Securities elements;
         elements = factory.fromXmlToSecuritiesObject(str);      
@@ -150,7 +157,8 @@ public class TransaqHandler implements Runnable {
     }        
 
     
-    if (typeData1.equals("boards") == true){    
+    if (typeData1.equals("boards") == true){ 
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         Boards elements;
         elements = factory.fromXmlToBoardsObject(str);      
@@ -183,67 +191,25 @@ public class TransaqHandler implements Runnable {
        // for (int i = 0; i < elements.getQuotation().size(); i++) {
        //     Quotations.Quotation el = elements.getQuotation().get(i);            
        //     quotationObList.add(el);            
-        }         
+        }         */
   
-    if (typeData1.equals("quotes") == true){    
+    if (typeData1.equals("quotes") == true){ 
+        flProcessed = true; 
+        //System.out.println("Получили alltrades ");
         XmlObjectFactory factory = new XmlObjectFactory();        
         Quotes elements;
         elements = factory.fromXmlToQuatesObject(str);      
         for (int i = 0; i < elements.getQuote().size(); i++) {
-            Quotes.Quote el = elements.getQuote().get(i);
-
-            int index = quoteObList.indexOf(el); 
-            if (index == -1){
-                quoteObList.add(el); 
-                
-            }
-            else{
-                Quotes.Quote el_old=quoteObList.get(index);
-                
-                if (el.getSell() == null){
-                    System.out.println("el.getSell() == null");
-                }
-                if (el.getBuy() == null){
-                    System.out.println("el.getBuy() == null");
-                }
-                
-                if(el.getSell() == -1 && el.getBuy() == -1){//удаляем строку
-                    quoteObList.remove(index);
-                    quoteObList.sorted(); 
-                    continue;
-                }
-                
-                if(el.getSell() == -1 && el.getBuy() == 0){//удаляем строку
-                    quoteObList.remove(index);
-                    quoteObList.sorted(); 
-                    continue;
-                }               
-                    
-                if(el.getSell() == 0 && el.getBuy() == -1){//удаляем строку
-                    quoteObList.remove(index);
-                    quoteObList.sorted(); 
-                    continue;
-                } 
-                
-                
-                el_old.setBuy(el.getBuy());
-                    el_old.setSell(el.getSell());
-                    
-                    el_old.setBoard(el.getBoard());
-                    el_old.setPrice(el.getPrice());
-                    el_old.setSeccode(el.getSeccode());
-              
-            
-            
-            
-            }
-                       
-        } 
-        Collections.sort(quoteObList);
+            Quotes.Quote el = elements.getQuote().get(i);           
+            QuotesHandler quotesOperation = new QuotesHandler();            
+            quotesOperation.AddQuoteInStorage(el);
+          
+            } 
+ 
+    }
     
-    }*/
-    
-     if (typeData1.equals("alltrades") == true){  
+    if (typeData1.equals("alltrades") == true){ 
+        flProcessed = true; 
         System.out.println("Получили alltrades ");
         XmlObjectFactory factory = new XmlObjectFactory();        
         Alltrades elements;
@@ -258,7 +224,8 @@ public class TransaqHandler implements Runnable {
             } 
         }         
     
-     if (typeData1.equals("client") == true){    
+     if (typeData1.equals("client") == true){   
+         flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         Client elements;
         elements = factory.fromXmlToClientObject(str);   
@@ -268,7 +235,8 @@ public class TransaqHandler implements Runnable {
     
         }
      
-    if (typeData1.equals("trades") == true){    
+    if (typeData1.equals("trades") == true){  
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         Trades elements;
         elements = factory.fromXmlToTradesObject(str);
@@ -282,7 +250,8 @@ public class TransaqHandler implements Runnable {
             } 
         }  
     
-    if (typeData1.equals("orders") == true){    
+    if (typeData1.equals("orders") == true){   
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         Orders elements;
         elements = factory.fromXmlToOrdersObject(str);
@@ -297,7 +266,8 @@ public class TransaqHandler implements Runnable {
     
  
         
-    if (typeData1.equals("portfolio_tplus") == true){    
+    if (typeData1.equals("portfolio_tplus") == true){   
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         PortfolioTplus currencyPortfolioTplus = factory.fromXmlToPortfolioTplusObject(str);  
         
@@ -305,7 +275,8 @@ public class TransaqHandler implements Runnable {
         handler.AddPortfolioTplusInStorage(currencyPortfolioTplus);
         }  
     
-    if (typeData1.equals("united_portfolio") == true){    
+    if (typeData1.equals("united_portfolio") == true){ 
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         PortfolioUnited  currencyPortfolioUnited = factory.fromXmlToPortfolioUnitedObject(str);  
         
@@ -314,13 +285,18 @@ public class TransaqHandler implements Runnable {
         }
     
     
-    if (typeData1.equals("clientlimits") == true){    
+    if (typeData1.equals("clientlimits") == true){  
+        flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        
         ClientLimits  currencyClientLimits = factory.fromXmlToClientLimitsObject(str);  
         
         ClientLimitsHandler handler = new ClientLimitsHandler ();
         handler.AddClientLimitsInStorage(currencyClientLimits);
         }
+    
+    if (flProcessed != true){        
+    System.out.println("Не обработанный пакет: " + typeData1);    
+    }
         
     }
     
