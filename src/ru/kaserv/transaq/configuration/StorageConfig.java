@@ -18,6 +18,7 @@ public class StorageConfig {
     private SecuritiesStorageConfig securitiesConfig;//чисто инструменты
     private ClientsStorageConfig clientsStorageConfig;
     
+    private CandlekindsStorageConfig candlekindsStorageConfig;
     
     
     private ClientsForTradesOrders clientsForTradesOrders; //это структура не чисто место хранения клиентов здесь trade, order
@@ -29,11 +30,14 @@ public class StorageConfig {
     private SecuritiesForAllTrades securitiesForAllTrades;
     private SecuritiesForQuotes securitiesForQuotes;
     //private securitiesForQuotations;
-    
+    private SecuritiesForCandles securitiesForCandles;
     
     private PortfolioTplusStorageConfig portfolioTplusStorageConfig;
     private PortfolioUnitedStorageConfig portfolioUnitedStorageConfig;
     private ClientLimitsStorageConfig clientLimitsStorageConfig;
+    
+ 
+    
 
     public StorageConfig() {
         storageConfig = this;
@@ -41,12 +45,13 @@ public class StorageConfig {
         boardsConfig = new BoardsStorageConfig();
         securitiesConfig = new SecuritiesStorageConfig();
         clientsStorageConfig = new ClientsStorageConfig();
-        
+        candlekindsStorageConfig = new CandlekindsStorageConfig();
         
    
         clientsForTradesOrders = new ClientsForTradesOrders();      
         securitiesForAllTrades = new SecuritiesForAllTrades();
         securitiesForQuotes = new SecuritiesForQuotes();
+        securitiesForCandles = new SecuritiesForCandles();
         
         portfolioTplusStorageConfig = new PortfolioTplusStorageConfig();
         portfolioUnitedStorageConfig = new PortfolioUnitedStorageConfig();
@@ -78,6 +83,10 @@ public class StorageConfig {
     public SecuritiesForQuotes getSecuritiesForQuotes() {
         return securitiesForQuotes;
     }
+
+    public SecuritiesForCandles getSecuritiesForCandles() {
+        return securitiesForCandles;
+    }
     
 
     public ClientsForTradesOrders getClientsForTradesOrders() {
@@ -98,6 +107,10 @@ public class StorageConfig {
 
     public ClientLimitsStorageConfig getClientLimitsStorageConfig() {
         return clientLimitsStorageConfig;
+    }
+
+    public CandlekindsStorageConfig getCandlekindsStorageConfig() {
+        return candlekindsStorageConfig;
     }
     
     

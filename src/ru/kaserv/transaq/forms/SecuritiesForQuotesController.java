@@ -169,7 +169,9 @@ public class SecuritiesForQuotesController implements Initializable {
 
 
 
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Стакан для инструмента: "+securityForQuotes.getSecurity().getBoard()
+                                            +" "+securityForQuotes.getSecurity().getSeccode());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Quotes.fxml"));
         Parent root = null;
    

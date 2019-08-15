@@ -110,6 +110,7 @@ public class Candlekinds {
      * 
      * 
      */
+    
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "id",

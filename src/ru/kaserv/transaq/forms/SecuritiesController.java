@@ -15,8 +15,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import ru.kaserv.transaq.command.GetHistoryDataCommand;
+import ru.kaserv.transaq.command.GetHistoryDataCommandSender;
 import ru.kaserv.transaq.command.SubscribeCommand;
 import ru.kaserv.transaq.command.SubscribeCommandSender;
+import ru.kaserv.transaq.configuration.GlobalConfigSetting;
 import ru.kaserv.transaq.configuration.StorageConfig;
 import ru.kaserv.transaq.object.Securities;
 
@@ -167,6 +170,45 @@ public class SecuritiesController implements Initializable {
         sender.sendCommand(command);
         
 
+        
+    }
+    
+    @FXML
+    public void handleGetCandles (ActionEvent event){
+        
+        TableView.TableViewSelectionModel<Securities.Security> selectionModel = securityTableView.getSelectionModel();
+        Securities.Security security = selectionModel.getSelectedItem();     
+        
+        GetHistoryDataCommand command =  new GetHistoryDataCommand();
+        
+                
+            
+        GetHistoryDataCommand.Security sec = new GetHistoryDataCommand.Security();
+        sec.setBoard(security.getBoard());
+        sec.setSeccode(security.getSeccode());
+        command.setCount(GlobalConfigSetting.countCandles1);
+        command.setPeriod(GlobalConfigSetting.idIntervalForCandles1);
+        command.setReset(true);
+        
+       
+        command.setSecurity(sec);
+
+        GetHistoryDataCommandSender sender = new GetHistoryDataCommandSender();
+        sender.sendCommand(command);
+        
+        
+        
+        command.setCount(GlobalConfigSetting.countCandles2);
+        command.setPeriod(GlobalConfigSetting.idIntervalForCandles2);
+        command.setReset(true);     
+        command.setSecurity(sec);
+        sender.sendCommand(command);
+        
+        command.setCount(GlobalConfigSetting.countCandles3);
+        command.setPeriod(GlobalConfigSetting.idIntervalForCandles3);
+        command.setReset(true);     
+        command.setSecurity(sec);
+        sender.sendCommand(command);
         
     }
     

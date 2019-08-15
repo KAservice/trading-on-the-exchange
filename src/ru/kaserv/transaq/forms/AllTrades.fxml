@@ -11,16 +11,45 @@
     <children>
                         <TableView fx:id="allTradesTableView" layoutX="14.0" layoutY="14.0" prefHeight="426.0" prefWidth="724.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="3.0">
                            <columns>
-                              <TableColumn fx:id="columnAllTradesTableViewBoard" text="Board" />
-                              <TableColumn fx:id="columnAllTradesTableViewSeccode" prefWidth="117.0" text="Seccode" />
-                              <TableColumn fx:id="columnAllTradesTableViewPrice" minWidth="0.0" prefWidth="141.0" text="Price" />
-                              <TableColumn fx:id="columnAllTradesTableViewTradeNo" minWidth="0.0" prefWidth="141.0" text="TradeNo" />
-                              <TableColumn fx:id="columnAllTradesTableViewSecid" minWidth="0.0" prefWidth="90.0" text="SecId" />
-                              <TableColumn fx:id="columnAllTradesTableViewBuysell" minWidth="0.0" prefWidth="90.0" text="Buysell" />
-                              <TableColumn fx:id="columnAllTradesTableViewOpeninterest" minWidth="0.0" prefWidth="90.0" text="Openinterest" />
-                              <TableColumn fx:id="columnAllTradesTableViewPeriod" minWidth="0.0" prefWidth="90.0" text="Period" />
-                              <TableColumn fx:id="columnAllTradesTableViewQuantity" minWidth="0.0" prefWidth="90.0" text="Quantity" />
-                              <TableColumn fx:id="columnAllTradesTableViewTime" minWidth="0.0" prefWidth="90.0" text="Time" />
+                               
+                                <TableColumn fx:id="columnAllTradesTableViewMaxPrice" minWidth="0.0" prefWidth="90.0" text="Max" />
+                                <TableColumn fx:id="columnAllTradesTableViewAveragePrice" minWidth="0.0" prefWidth="90.0" text="Средняя" />
+                                <TableColumn fx:id="columnAllTradesTableViewMinPrice" minWidth="0.0" prefWidth="90.0" text="Min" />
+                                
+                                
+                                <TableColumn fx:id="columnAllTradesTableViewPrice" minWidth="0.0" prefWidth="141.0" text="Price" />
+                                <TableColumn fx:id="columnAllTradesTableViewStandardDeviation" minWidth="0.0" prefWidth="90.0" text="Отклонение" />
+                                
+                                <TableColumn fx:id="columnAllTradesTableViewBoard" text="Board" />
+                                <TableColumn fx:id="columnAllTradesTableViewSeccode" prefWidth="117.0" text="Seccode" />
+                                <TableColumn fx:id="columnAllTradesTableViewTradeNo" minWidth="0.0" prefWidth="141.0" text="TradeNo" />
+                                <TableColumn fx:id="columnAllTradesTableViewSecid" minWidth="0.0" prefWidth="90.0" text="SecId" />
+                                <TableColumn fx:id="columnAllTradesTableViewBuysell" minWidth="0.0" prefWidth="90.0" text="Buysell" />
+                                <TableColumn fx:id="columnAllTradesTableViewOpeninterest" minWidth="0.0" prefWidth="90.0" text="Openinterest" />
+                                <TableColumn fx:id="columnAllTradesTableViewPeriod" minWidth="0.0" prefWidth="90.0" text="Period" />
+                                <TableColumn fx:id="columnAllTradesTableViewQuantity" minWidth="0.0" prefWidth="90.0" text="Quantity" />
+                                <TableColumn fx:id="columnAllTradesTableViewTime" minWidth="0.0" prefWidth="90.0" text="Time" />
+                                
+                                
+                                <TableColumn fx:id="columnAllQuantityOfPurchased" minWidth="0.0" prefWidth="90.0" text="Всего кол куплено" />
+                                <TableColumn fx:id="columnAllQuantitySold" minWidth="0.0" prefWidth="90.0" text="Все кол продано" />
+                                <TableColumn fx:id="columnAllAmountSold" minWidth="0.0" prefWidth="90.0" text="Всего сум продано" />
+                                <TableColumn fx:id="columnAllPurchasesAmount" minWidth="0.0" prefWidth="90.0" text="Всего сум куплено" />                                
+                                
+                                <TableColumn fx:id="columnAverageSoldPrice" minWidth="0.0" prefWidth="90.0" text="средняя цена продажи" />
+                                <TableColumn fx:id="columnAverageBuyingPrice" minWidth="0.0" prefWidth="90.0" text="Средняя цена покупки" />
+                                <TableColumn fx:id="columnAverageBuyingAndSellingPrice" minWidth="0.0" prefWidth="90.0" text="Срелняя цена пок и прод" />
+                                <TableColumn fx:id="columnAllAmountSellingAndBuying" minWidth="0.0" prefWidth="90.0" text="Сумма пок и прод" />    
+                                <TableColumn fx:id="columnSellingAndBuyingQuantityAll" minWidth="0.0" prefWidth="90.0" text="Кол пок и прод" />    
+ 
+    
+                                <TableColumn fx:id="columnTheRateOfChangeOfPricesBuy1" minWidth="0.0" prefWidth="90.0" text="Изм цены пок 1" />
+                                <TableColumn fx:id="columnTheRateOfChangeOfPricesSell1" minWidth="0.0" prefWidth="90.0" text="Изм цены прод 1" />
+                                <TableColumn fx:id="columnTheRateOfChangeOfPricesBuy2" minWidth="0.0" prefWidth="90.0" text="Изм цены пок 2" />
+                                <TableColumn fx:id="columnTheRateOfChangeOfPricesSell2" minWidth="0.0" prefWidth="90.0" text="Изм цены прод 2" />  
+                                <TableColumn fx:id="columnTheRateOfChangeOfPricesBuy3" minWidth="0.0" prefWidth="90.0" text="Изм цены пок 3" />  
+                                <TableColumn fx:id="columnTheRateOfChangeOfPricesSell3" minWidth="0.0" prefWidth="90.0" text="Изм цены прод 3" />      
+       
                            </columns>
                         </TableView>
       <Label fx:id="captionLabel" layoutX="31.0" layoutY="80.0" prefHeight="30.0" prefWidth="511.0" text="Label">

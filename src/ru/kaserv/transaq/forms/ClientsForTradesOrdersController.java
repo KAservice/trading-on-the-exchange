@@ -116,7 +116,8 @@ public class ClientsForTradesOrdersController implements Initializable {
 
 
 
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage();
+        newWindow.setTitle("Инструменты для сделок и заявок клиента: "+clientForTradesOrders.getClient().getId());
         //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
           FXMLLoader loader = new FXMLLoader(getClass().getResource("SecuritiesForTradesOrders.fxml"));
         Parent root = null;
@@ -147,7 +148,8 @@ public class ClientsForTradesOrdersController implements Initializable {
                
     
         
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Клиенты ");
         //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
           FXMLLoader loader = new FXMLLoader(getClass().getResource("Clients.fxml"));
         Parent root = null;

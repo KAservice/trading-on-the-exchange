@@ -5,30 +5,27 @@
  */
 package ru.kaserv.transaq.configuration;
 
-import ru.kaserv.transaq.object.Client;
+import ru.kaserv.transaq.storage.CandlekindsStorage;
 import ru.kaserv.transaq.storage.ClientsStorage;
 
 /**
  *
  * @author 1
  */
-public class ClientsStorageConfig {
+public class CandlekindsStorageConfig {
     
-       private ClientsStorage clientsStorage;
-
-    public ClientsStorageConfig() {
         
-        clientsStorage = new ClientsStorage();
- 
+    private CandlekindsStorage storage;
+
+    public CandlekindsStorageConfig() {
+        
+        storage = new CandlekindsStorage();
+    
     }
-    
-    
     
 
-    public ClientsStorage getClientsStorage() {
-        return clientsStorage;
+    public CandlekindsStorage getStorage() {
+        return storage;
     }
-       
-   
     
 }

@@ -1,0 +1,20 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="command">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="security">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="board"/>
+              <xs:element type="xs:string" name="seccode"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:int" name="period"/>
+        <xs:element type="xs:int" name="count"/>
+        <xs:element type="xs:string" name="reset"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

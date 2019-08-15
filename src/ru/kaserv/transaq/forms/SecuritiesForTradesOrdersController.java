@@ -188,7 +188,9 @@ public class SecuritiesForTradesOrdersController implements Initializable {
 
 
         Stage newWindow = new Stage();    
-
+        newWindow.setTitle("Сделки для инструмента: "+securityForTradesOrders.getSecurity().getBoard()
+                                            +" "+securityForTradesOrders.getSecurity().getSeccode()
+                                            +" клиент: "+clientForTradesOrders.getClient().getId());
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Trades.fxml"));
         Parent root = null;
@@ -224,7 +226,10 @@ public class SecuritiesForTradesOrdersController implements Initializable {
 
 
 
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Заявки для инструмента: "+securityForTradesOrders.getSecurity().getBoard()
+                                            +" "+securityForTradesOrders.getSecurity().getSeccode()
+                                            +" клиент: "+clientForTradesOrders.getClient().getId());
 
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Orders.fxml"));
@@ -258,7 +263,8 @@ public class SecuritiesForTradesOrdersController implements Initializable {
                
     
         
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Инструменты");
         //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Securities.fxml"));
         Parent root = null;
@@ -318,7 +324,10 @@ public class SecuritiesForTradesOrdersController implements Initializable {
 
 
 
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Заявки брокеру для инструмента: "+securityForTradesOrders.getSecurity().getBoard()
+                                            +" "+securityForTradesOrders.getSecurity().getSeccode()
+                                            +" клиент: "+clientForTradesOrders.getClient().getId());
 
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderToBrokerTableForm.fxml"));
@@ -339,9 +348,6 @@ public class SecuritiesForTradesOrdersController implements Initializable {
         controller.setClient(clientForTradesOrders.getClient());
         controller.setSecurity(securityForTradesOrders.getSecurity());
 
-        
-
-            
             
         Scene scene = new Scene(root);        
         newWindow.setScene(scene);
@@ -361,7 +367,9 @@ public class SecuritiesForTradesOrdersController implements Initializable {
 
 
         Stage newWindow = new Stage();    
-
+        newWindow.setTitle("Заявки на бирже для инструмента: "+securityForTradesOrders.getSecurity().getBoard()
+                                            +" "+securityForTradesOrders.getSecurity().getSeccode()
+                                            +" клиент: "+clientForTradesOrders.getClient().getId());
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderToExchangeTableForm.fxml"));
         Parent root = null;

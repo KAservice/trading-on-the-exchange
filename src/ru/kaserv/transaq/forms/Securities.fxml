@@ -28,7 +28,8 @@
                                  <TableColumn fx:id="columnActive" minWidth="0.0" prefWidth="239.0" text="Active" />
                               </columns>
                            </TableView>
-      <Button layoutX="16.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleCreateSubscribeForAlltrades" text="Подписка на alltrades" />
-      <Button layoutX="182.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleCreateSubscribeForQuotes" text="Подписка на quotes" />
+      <Button layoutX="234.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCreateSubscribeForAlltrades" text="Подписка на alltrades" />
+      <Button layoutX="382.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCreateSubscribeForQuotes" text="Подписка на quotes" />
+      <Button layoutX="94.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleGetCandles" prefHeight="25.0" prefWidth="126.0" text="Получить свечи" />
    </children>    
 </AnchorPane>

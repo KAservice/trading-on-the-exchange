@@ -7,6 +7,7 @@ package ru.kaserv.transaq.configuration;
 
 import ru.kaserv.transaq.object.Securities;
 import ru.kaserv.transaq.storage.AllTradesStorage;
+import ru.kaserv.transaq.storage.CandlesStorage;
 
 /**
  *
@@ -18,11 +19,14 @@ public class SecurityForAllTrades {
     private Securities.Security security;
     
 
+    
+
     public SecurityForAllTrades(Securities.Security security) {
         
         this.security = security;
         allTradesStorage = new AllTradesStorage();
-    }
+        
+      }
 
     public AllTradesStorage getAllTradesStorage() {
         return allTradesStorage;

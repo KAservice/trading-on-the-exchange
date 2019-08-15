@@ -18,6 +18,10 @@ public class CancelOrderCommand {
     
     private int transactionid;
     
+    private String clientId;
+    private String seccode;
+    private String board;
+    
     public String createCommandCancelOrder(int id){
    
         String result = "<command id=\"cancelorder\">"
@@ -46,5 +50,33 @@ public class CancelOrderCommand {
         
         
     }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getSeccode() {
+        return seccode;
+    }
+
+    public void setSeccode(String seccode) {
+        this.seccode = seccode;
+    }
+
+    public String getBoard() {
+        return board;
+    }
+
+    public void setBoard(String board) {
+        this.board = board;
+    }
+    
+    
+    
+    
     
 }

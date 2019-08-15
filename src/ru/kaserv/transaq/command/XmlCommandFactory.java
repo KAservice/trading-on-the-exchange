@@ -85,7 +85,30 @@ public class XmlCommandFactory {
         }
         
     return result;    
-    }    
+    }  
+    
+    
+    public String convertGetHistoryDataCommandToXml(GetHistoryDataCommand command) {
+        String result="";
+        try {
+            JAXBContext context = JAXBContext.newInstance(GetHistoryDataCommand.class);
+            Marshaller marshaller = context.createMarshaller();
+            // устанавливаем флаг для читабельного вывода XML в JAXB
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            
+            
+            StringWriter sw = new StringWriter();
+ 
+            // маршаллинг объекта в файл
+            marshaller.marshal(command, sw);
+            result = sw.toString();
+        } 
+        catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        
+    return result;    
+    }
     
     
 }

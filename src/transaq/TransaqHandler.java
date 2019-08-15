@@ -5,9 +5,11 @@
  */
 package transaq;
 
-import java.util.Collections;
+import ru.kaserv.transaq.configuration.GlobalConfigSetting;
 import ru.kaserv.transaq.handler.AllTradesHandler;
 import ru.kaserv.transaq.handler.BoardsHandler;
+import ru.kaserv.transaq.handler.CandlekindsHandler;
+import ru.kaserv.transaq.handler.CandlesHandler;
 import ru.kaserv.transaq.handler.ClientLimitsHandler;
 import ru.kaserv.transaq.handler.ClientsHandler;
 import ru.kaserv.transaq.handler.OrdersHandler;
@@ -24,6 +26,8 @@ import ru.kaserv.transaq.object.Trades;
 import ru.kaserv.transaq.object.XmlObjectFactory;
 import ru.kaserv.transaq.handler.SecuritiesHandler;
 import ru.kaserv.transaq.handler.TradesHandler;
+import ru.kaserv.transaq.object.Candlekinds;
+import ru.kaserv.transaq.object.Candles;
 import ru.kaserv.transaq.object.ClientLimits;
 import ru.kaserv.transaq.object.PortfolioUnited;
 import ru.kaserv.transaq.object.Quotes;
@@ -170,17 +174,29 @@ public class TransaqHandler implements Runnable {
         }         
     }
 
-/*    if (typeData1.equals("candlekinds") == true){    
+    if (typeData1.equals("candlekinds") == true){    
         XmlObjectFactory factory = new XmlObjectFactory();        
         Candlekinds elements;
         elements = factory.fromXmlToCandlekindsObject(str);      
         for (int i = 0; i < elements.getKind().size(); i++) {
             Candlekinds.Kind el = elements.getKind().get(i);            
-            candlekindObList.add(el);            
+            CandlekindsHandler candlekindsHandler= new CandlekindsHandler();
+            candlekindsHandler.AddCandlesInStorage(el);          
         }         
     }
+    
+    
+    if (typeData1.equals("candles") == true){ 
+        flProcessed = true; 
+        XmlObjectFactory factory = new XmlObjectFactory();        
+        Candles elements;
+        elements = factory.fromXmlToCandlesObject(str);               
+        //alltradeObList.add(elements.getTrade()); 
+        CandlesHandler candlesHandler = new CandlesHandler();
+        candlesHandler.AddCandlesInStorage(elements);
+    }
 
-     if (typeData1.equals("quotations") == true){    
+    /* if (typeData1.equals("quotations") == true){    
         XmlObjectFactory factory = new XmlObjectFactory();        
         Quotations elements;
         elements = factory.fromXmlToQuatationsObject(str);  
@@ -235,37 +251,37 @@ public class TransaqHandler implements Runnable {
     
         }
      
-    if (typeData1.equals("trades") == true){  
-        flProcessed = true; 
-        XmlObjectFactory factory = new XmlObjectFactory();        
-        Trades elements;
-        elements = factory.fromXmlToTradesObject(str);
-        for (int i = 0; i < elements.getTrade().size(); i++) {
-            Trades.Trade el = elements.getTrade().get(i);            
-            //tradeObList.add(el); 
-            
-                        
-            TradesHandler tradesOperation = new TradesHandler();            
-            tradesOperation.AddTradeInStorage(el);
+    if (typeData1.equals("trades") == true){ 
+        if (GlobalConfigSetting.testRegime == false){
+
+            flProcessed = true; 
+            XmlObjectFactory factory = new XmlObjectFactory();        
+            Trades elements;
+            elements = factory.fromXmlToTradesObject(str);
+            for (int i = 0; i < elements.getTrade().size(); i++) {
+                Trades.Trade el = elements.getTrade().get(i);            
+                //tradeObList.add(el); 
+                TradesHandler tradesOperation = new TradesHandler();            
+                tradesOperation.AddTradeInStorage(el);
             } 
-        }  
+        }
+    }  
     
-    if (typeData1.equals("orders") == true){   
-        flProcessed = true; 
-        XmlObjectFactory factory = new XmlObjectFactory();        
-        Orders elements;
-        elements = factory.fromXmlToOrdersObject(str);
-        for (int i = 0; i < elements.getOrder().size(); i++) {
-            Orders.Order el = elements.getOrder().get(i); 
-            
-            OrdersHandler orderOperation = new OrdersHandler();            
-            orderOperation.AddOrderInStorage(el);
-          
-            } 
-        } 
+    if (typeData1.equals("orders") == true){ 
+        if (GlobalConfigSetting.testRegime == false){
+            flProcessed = true; 
+            XmlObjectFactory factory = new XmlObjectFactory();        
+            Orders elements;
+            elements = factory.fromXmlToOrdersObject(str);
+            for (int i = 0; i < elements.getOrder().size(); i++) {
+                Orders.Order el = elements.getOrder().get(i); 
+                OrdersHandler orderOperation = new OrdersHandler();            
+                orderOperation.AddOrderInStorage(el);
+            }
+        }
+    } 
     
- 
-        
+
     if (typeData1.equals("portfolio_tplus") == true){   
         flProcessed = true; 
         XmlObjectFactory factory = new XmlObjectFactory();        

@@ -128,7 +128,8 @@ public class ClientsController implements Initializable {
                 
                 if (portfolioTplus != null){
                     
-                    Stage newWindow = new Stage();    
+                    Stage newWindow = new Stage(); 
+                    newWindow.setTitle("Портфолио клиента: "+client.getId());
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("PortfolioTplus.fxml"));
                     Parent root = null;
@@ -205,7 +206,8 @@ public class ClientsController implements Initializable {
                 
                 if (portfolioUnited != null){
                     
-                    Stage newWindow = new Stage();    
+                    Stage newWindow = new Stage(); 
+                    newWindow.setTitle("Портфолио объединенный клиента: "+client.getId());
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("PortfolioUnited.fxml"));
                     Parent root = null;
@@ -280,7 +282,8 @@ public class ClientsController implements Initializable {
                 
                 if (clientLimits != null){
                     
-                    Stage newWindow = new Stage();    
+                    Stage newWindow = new Stage();
+                    newWindow.setTitle("Лимиты клиента: "+client.getId());
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("ClientLimits.fxml"));
                     Parent root = null;

@@ -1,0 +1,38 @@
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="627.0" prefWidth="784.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ru.kaserv.transaq.forms.CandlesFormController">
+    <children>
+                        <TableView fx:id="candlesTableView" layoutX="14.0" layoutY="14.0" prefHeight="426.0" prefWidth="724.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="3.0">
+                           <columns>
+                                <TableColumn fx:id="columnDate" minWidth="0.0" prefWidth="90.0" text="Date" />
+                                <TableColumn fx:id="columnOpen" minWidth="0.0" prefWidth="90.0" text="Open" />
+                                <TableColumn fx:id="columnClose" minWidth="0.0" prefWidth="90.0" text="Close" />
+                                <TableColumn fx:id="columnHigh" minWidth="0.0" prefWidth="141.0" text="High" />
+                                <TableColumn fx:id="columnLow" minWidth="0.0" prefWidth="90.0" text="Low" />
+                                <TableColumn fx:id="columnVolume" text="Volume" />
+                                
+                                
+                                
+                                <TableColumn fx:id="columnBAveragePrice" minWidth="0.0" prefWidth="90.0" text="Б ср цена" />
+                                <TableColumn fx:id="columnBDeviationPrice" minWidth="0.0" prefWidth="90.0" text="Б откл" />
+                                <TableColumn fx:id="columnBMaxPrice" minWidth="0.0" prefWidth="90.0" text="Б макс" />
+                                <TableColumn fx:id="columnBMinPrice" minWidth="0.0" prefWidth="141.0" text="Б мин" />
+                                <TableColumn fx:id="columnPriceChangeSpeed" minWidth="0.0" prefWidth="90.0" text="Скорость" />
+                                
+                                
+                            </columns>
+                        </TableView>
+
+      <Label fx:id="captionLabel" layoutX="31.0" layoutY="80.0" prefHeight="30.0" prefWidth="511.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+
+   </children>     
+</AnchorPane>

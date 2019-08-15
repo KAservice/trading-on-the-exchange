@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<command id="gethistorydata">
+    <security>
+        <board> идентификатор режима торгов </board>
+        <seccode> код инструмента </seccode>
+    </security>
+    <period>2</period>
+    <count>123</count>
+    <reset>true</reset>
+</command>

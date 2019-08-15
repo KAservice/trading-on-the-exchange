@@ -169,7 +169,9 @@ public class SecuritiesForAllTradesController implements Initializable {
 
 
 
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Все сделки для инструмента: "+securityForAllTrades.getSecurity().getBoard()
+                                            +" "+securityForAllTrades.getSecurity().getSeccode());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AllTrades.fxml"));
         Parent root = null;
    

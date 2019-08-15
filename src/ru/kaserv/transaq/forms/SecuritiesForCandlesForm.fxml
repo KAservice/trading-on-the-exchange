@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kaserv.transaq.forms.SecuritiesForCandlesFormController">
+   <children>
+      <TableView fx:id="securitiesTableView" layoutX="14.0" layoutY="225.0" prefHeight="392.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="67.0">
+        <columns>
+                              <TableColumn fx:id="columnShortName" prefWidth="158.0" text="ShortName" />
+                              <TableColumn fx:id="columnSecTz" minWidth="0.0" prefWidth="172.0" text="SecTz" />
+                              <TableColumn fx:id="columnSeccode" minWidth="0.0" prefWidth="166.0" text="Seccode" />
+                              <TableColumn fx:id="columnBoard" minWidth="0.0" prefWidth="93.0" text="Board" />
+                              <TableColumn fx:id="columnDecimals" minWidth="0.0" prefWidth="239.0" text="Decimals" />
+                              <TableColumn fx:id="columnMarket" minWidth="0.0" prefWidth="239.0" text="Market" />
+                              <TableColumn fx:id="columnSectype" minWidth="0.0" prefWidth="239.0" text="Sectype" />
+                              <TableColumn fx:id="columnMinstep" minWidth="0.0" prefWidth="239.0" text="Minstep" />
+                              <TableColumn fx:id="columnLotsize" minWidth="0.0" prefWidth="239.0" text="Lotsize" />
+                              <TableColumn fx:id="columnPointCost" minWidth="0.0" prefWidth="239.0" text="PointCost" />
+                              <TableColumn fx:id="columnQuotestype" minWidth="0.0" prefWidth="239.0" text="Quotestype" />
+                              <TableColumn fx:id="columnSecid" minWidth="0.0" prefWidth="239.0" text="Secid" />
+                              <TableColumn fx:id="columnActive" minWidth="0.0" prefWidth="239.0" text="Active" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#openCandlesTableOn1Period" text="Свечи за период 1" />
+      <Button layoutX="181.0" layoutY="36.0" mnemonicParsing="false" onAction="#openCandlesTableOn2Period" text="Свечи за период 2" />
+      <Button layoutX="343.0" layoutY="36.0" mnemonicParsing="false" onAction="#openCandlesTableOn3Period" text="Свечи за период 3" />
+   </children>    
+</AnchorPane>

@@ -9,14 +9,19 @@
 package ru.kaserv.transaq.object;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -142,7 +147,9 @@ public class Alltrades {
         protected String seccode;
         protected int tradeno;
         @XmlElement(required = true)
-        protected String time;
+                //04.06.2019 16:03:13.279
+        @XmlJavaTypeAdapter(Trades.DateAdapter.class)
+        protected Date time;
         @XmlElement(required = true)
         protected String board;
         @XmlElement(required = true)
@@ -155,6 +162,48 @@ public class Alltrades {
         protected String period;
         @XmlAttribute(name = "secid")
         protected Integer secid;
+        
+        @XmlTransient
+        private BigDecimal  averagePrice;
+        @XmlTransient
+        private BigDecimal  standardDeviation;
+        @XmlTransient
+        private BigDecimal  minPrice;
+        @XmlTransient
+        private BigDecimal  maxPrice;
+        
+        
+        @XmlTransient
+        private Integer  allQuantityOfPurchased;
+        @XmlTransient
+        private Integer  allQuantitySold;        
+        @XmlTransient    
+        private BigDecimal  allAmountSold;
+        @XmlTransient
+        private BigDecimal  allPurchasesAmount;
+        @XmlTransient    
+        private BigDecimal  averageSoldPrice;
+        @XmlTransient
+        private BigDecimal  averageBuyingPrice;        
+        @XmlTransient    
+        private BigDecimal  allAmountSellingAndBuying;
+        @XmlTransient
+        private Integer  sellingAndBuyingQuantityAll; 
+        @XmlTransient    
+        private BigDecimal  averageBuyingAndSellingPrice;  
+        
+        @XmlTransient    
+        private BigDecimal  theRateOfChangeOfPricesBuy1;
+        @XmlTransient    
+        private BigDecimal  theRateOfChangeOfPricesSell1;
+        @XmlTransient    
+        private BigDecimal  theRateOfChangeOfPricesBuy2;
+        @XmlTransient    
+        private BigDecimal  theRateOfChangeOfPricesSell2;
+        @XmlTransient    
+        private BigDecimal  theRateOfChangeOfPricesBuy3;
+        @XmlTransient    
+        private BigDecimal  theRateOfChangeOfPricesSell3;        
 
         /**
          * Gets the value of the seccode property.
@@ -204,7 +253,7 @@ public class Alltrades {
          *     {@link String }
          *     
          */
-        public String getTime() {
+        public Date getTime() {
             return time;
         }
 
@@ -216,7 +265,7 @@ public class Alltrades {
          *     {@link String }
          *     
          */
-        public void setTime(String value) {
+        public void setTime(Date value) {
             this.time = value;
         }
 
@@ -372,6 +421,182 @@ public class Alltrades {
             this.secid = value;
         }
 
+        public BigDecimal getAveragePrice() {
+            return averagePrice;
+        }
+
+        public void setAveragePrice(BigDecimal averagePrice) {
+            this.averagePrice = averagePrice;
+        }
+
+        public BigDecimal getStandardDeviation() {
+            return standardDeviation;
+        }
+
+        public void setStandardDeviation(BigDecimal standardDeviation) {
+            this.standardDeviation = standardDeviation;
+        }
+
+        public BigDecimal getMinPrice() {
+            return minPrice;
+        }
+
+        public void setMinPrice(BigDecimal minPrice) {
+            this.minPrice = minPrice;
+        }
+
+        public BigDecimal getMaxPrice() {
+            return maxPrice;
+        }
+
+        public void setMaxPrice(BigDecimal maxPrice) {
+            this.maxPrice = maxPrice;
+        }
+
+        public Integer getAllQuantityOfPurchased() {
+            return allQuantityOfPurchased;
+        }
+
+        public void setAllQuantityOfPurchased(Integer allQuantityOfPurchased) {
+            this.allQuantityOfPurchased = allQuantityOfPurchased;
+        }
+
+        public Integer getAllQuantitySold() {
+            return allQuantitySold;
+        }
+
+        public void setAllQuantitySold(Integer allQuantitySold) {
+            this.allQuantitySold = allQuantitySold;
+        }
+
+        public BigDecimal getAllAmountSold() {
+            return allAmountSold;
+        }
+
+        public void setAllAmountSold(BigDecimal allAmountSold) {
+            this.allAmountSold = allAmountSold;
+        }
+
+        public BigDecimal getAllPurchasesAmount() {
+            return allPurchasesAmount;
+        }
+
+        public void setAllPurchasesAmount(BigDecimal allPurchasesAmount) {
+            this.allPurchasesAmount = allPurchasesAmount;
+        }
+
+        public BigDecimal getAverageSoldPrice() {
+            return averageSoldPrice;
+        }
+
+        public void setAverageSoldPrice(BigDecimal averageSoldPrice) {
+            this.averageSoldPrice = averageSoldPrice;
+        }
+
+        public BigDecimal getAverageBuyingPrice() {
+            return averageBuyingPrice;
+        }
+
+        public void setAverageBuyingPrice(BigDecimal averageBuyingPrice) {
+            this.averageBuyingPrice = averageBuyingPrice;
+        }
+
+        public BigDecimal getAllAmountSellingAndBuying() {
+            return allAmountSellingAndBuying;
+        }
+
+        public void setAllAmountSellingAndBuying(BigDecimal allAmountSellingAndBuying) {
+            this.allAmountSellingAndBuying = allAmountSellingAndBuying;
+        }
+
+        public Integer getSellingAndBuyingQuantityAll() {
+            return sellingAndBuyingQuantityAll;
+        }
+
+        public void setSellingAndBuyingQuantityAll(Integer sellingAndBuyingQuantityAll) {
+            this.sellingAndBuyingQuantityAll = sellingAndBuyingQuantityAll;
+        }
+
+        public BigDecimal getAverageBuyingAndSellingPrice() {
+            return averageBuyingAndSellingPrice;
+        }
+
+        public void setAverageBuyingAndSellingPrice(BigDecimal averageBuyingAndSellingPrice) {
+            this.averageBuyingAndSellingPrice = averageBuyingAndSellingPrice;
+        }
+
+        public BigDecimal getTheRateOfChangeOfPricesBuy1() {
+            return theRateOfChangeOfPricesBuy1;
+        }
+
+        public void setTheRateOfChangeOfPricesBuy1(BigDecimal theRateOfChangeOfPricesBuy1) {
+            this.theRateOfChangeOfPricesBuy1 = theRateOfChangeOfPricesBuy1;
+        }
+
+        public BigDecimal getTheRateOfChangeOfPricesSell1() {
+            return theRateOfChangeOfPricesSell1;
+        }
+
+        public void setTheRateOfChangeOfPricesSell1(BigDecimal theRateOfChangeOfPricesSell1) {
+            this.theRateOfChangeOfPricesSell1 = theRateOfChangeOfPricesSell1;
+        }
+
+        public BigDecimal getTheRateOfChangeOfPricesBuy2() {
+            return theRateOfChangeOfPricesBuy2;
+        }
+
+        public void setTheRateOfChangeOfPricesBuy2(BigDecimal theRateOfChangeOfPricesBuy2) {
+            this.theRateOfChangeOfPricesBuy2 = theRateOfChangeOfPricesBuy2;
+        }
+
+        public BigDecimal getTheRateOfChangeOfPricesSell2() {
+            return theRateOfChangeOfPricesSell2;
+        }
+
+        public void setTheRateOfChangeOfPricesSell2(BigDecimal theRateOfChangeOfPricesSell2) {
+            this.theRateOfChangeOfPricesSell2 = theRateOfChangeOfPricesSell2;
+        }
+
+        public BigDecimal getTheRateOfChangeOfPricesBuy3() {
+            return theRateOfChangeOfPricesBuy3;
+        }
+
+        public void setTheRateOfChangeOfPricesBuy3(BigDecimal theRateOfChangeOfPricesBuy3) {
+            this.theRateOfChangeOfPricesBuy3 = theRateOfChangeOfPricesBuy3;
+        }
+
+        public BigDecimal getTheRateOfChangeOfPricesSell3() {
+            return theRateOfChangeOfPricesSell3;
+        }
+
+        public void setTheRateOfChangeOfPricesSell3(BigDecimal theRateOfChangeOfPricesSell3) {
+            this.theRateOfChangeOfPricesSell3 = theRateOfChangeOfPricesSell3;
+        }
+
+
+        
+       
+
     }
+    
+    public static class DateAdapter extends XmlAdapter<String, Date> {
+////04.06.2019 16:03:13.279
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss.SSS");
+
+    @Override
+    public String marshal(Date v) throws Exception {
+        synchronized (dateFormat) {
+            return dateFormat.format(v);
+        }
+    }
+
+    @Override
+    public Date unmarshal(String v) throws Exception {
+        synchronized (dateFormat) {
+            return dateFormat.parse(v);
+        }
+    }
+
+}
 
 }

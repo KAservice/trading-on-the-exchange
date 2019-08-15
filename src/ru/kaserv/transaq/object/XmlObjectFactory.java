@@ -232,7 +232,21 @@ public class XmlObjectFactory {
     }
         
         
+    public  Candles fromXmlToCandlesObject(String xml_data) {
+        StringReader reader = new StringReader(xml_data);
         
+        try {
+            // создаем объект JAXBContext - точку входа для JAXB
+            JAXBContext jaxbContext = JAXBContext.newInstance(Candles.class);
+            Unmarshaller un = jaxbContext.createUnmarshaller();
+            //this. = (SecurityList) un.unmarshal(reader);
+            return (Candles) un.unmarshal(reader);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;      
+   
+    }        
         
         
 }

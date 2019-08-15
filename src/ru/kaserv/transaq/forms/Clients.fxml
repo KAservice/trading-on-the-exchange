@@ -21,8 +21,8 @@
                            <TableColumn fx:id="columnClientTableViewType" minWidth="0.0" prefWidth="141.0" text="Type" />
                            <TableColumn fx:id="columnClientTableViewId" minWidth="0.0" prefWidth="141.0" text="Id" />
                            <TableColumn fx:id="columnClientTableViewRemove" minWidth="0.0" prefWidth="90.0" text="Remove" />
-                           <TableColumn fx:id="columnClientTableViewUnion" minWidth="0.0" prefWidth="141.0" text="Id" />
-                           <TableColumn fx:id="columnClientTableViewFortsAcc" minWidth="0.0" prefWidth="90.0" text="Remove" />     
+                           <TableColumn fx:id="columnClientTableViewUnion" minWidth="0.0" prefWidth="141.0" text="Union" />
+                           <TableColumn fx:id="columnClientTableViewFortsAcc" minWidth="0.0" prefWidth="90.0" text="FortsAcc" />     
         
                         </columns>
                      </TableView>

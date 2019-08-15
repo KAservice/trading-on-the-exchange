@@ -8,14 +8,20 @@
 
 package ru.kaserv.transaq.object;
 
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -257,19 +263,32 @@ public class Candles {
         @XmlValue
         protected String value;
         @XmlAttribute(name = "date")
-        protected String date;
+               //04.06.2019 16:03:13.279
+        @XmlJavaTypeAdapter(Trades.DateAdapter.class)
+        protected Date date;
         @XmlAttribute(name = "open")
-        protected Float open;
+        protected BigDecimal open;
         @XmlAttribute(name = "close")
-        protected Float close;
+        protected BigDecimal close;
         @XmlAttribute(name = "high")
-        protected Float high;
+        protected BigDecimal high;
         @XmlAttribute(name = "oi")
         protected Integer oi;
         @XmlAttribute(name = "low")
-        protected Float low;
+        protected BigDecimal low;
         @XmlAttribute(name = "volume")
-        protected Short volume;
+        protected Integer volume;
+        
+        @XmlTransient
+        protected BigDecimal bAveragePrice;
+        @XmlTransient
+        protected BigDecimal bDeviationPrice;
+        @XmlTransient
+        protected BigDecimal bMaxPrice; 
+        @XmlTransient
+        protected BigDecimal bMinPrice;
+        @XmlTransient
+        protected BigDecimal priceChangeSpeed;
 
         /**
          * Gets the value of the value property.
@@ -303,7 +322,7 @@ public class Candles {
          *     {@link String }
          *     
          */
-        public String getDate() {
+        public Date getDate() {
             return date;
         }
 
@@ -315,7 +334,7 @@ public class Candles {
          *     {@link String }
          *     
          */
-        public void setDate(String value) {
+        public void setDate(Date value) {
             this.date = value;
         }
 
@@ -327,7 +346,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public Float getOpen() {
+        public BigDecimal getOpen() {
             return open;
         }
 
@@ -339,7 +358,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public void setOpen(Float value) {
+        public void setOpen(BigDecimal value) {
             this.open = value;
         }
 
@@ -351,7 +370,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public Float getClose() {
+        public BigDecimal getClose() {
             return close;
         }
 
@@ -363,7 +382,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public void setClose(Float value) {
+        public void setClose(BigDecimal value) {
             this.close = value;
         }
 
@@ -375,7 +394,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public Float getHigh() {
+        public BigDecimal getHigh() {
             return high;
         }
 
@@ -387,7 +406,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public void setHigh(Float value) {
+        public void setHigh(BigDecimal value) {
             this.high = value;
         }
 
@@ -423,7 +442,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public Float getLow() {
+        public BigDecimal getLow() {
             return low;
         }
 
@@ -435,7 +454,7 @@ public class Candles {
          *     {@link Float }
          *     
          */
-        public void setLow(Float value) {
+        public void setLow(BigDecimal value) {
             this.low = value;
         }
 
@@ -447,7 +466,7 @@ public class Candles {
          *     {@link Short }
          *     
          */
-        public Short getVolume() {
+        public Integer getVolume() {
             return volume;
         }
 
@@ -459,10 +478,72 @@ public class Candles {
          *     {@link Short }
          *     
          */
-        public void setVolume(Short value) {
+        public void setVolume(Integer value) {
             this.volume = value;
         }
 
+        public BigDecimal getbAveragePrice() {
+            return bAveragePrice;
+        }
+
+        public void setbAveragePrice(BigDecimal bAveragePrice) {
+            this.bAveragePrice = bAveragePrice;
+        }
+
+        public BigDecimal getbDeviationPrice() {
+            return bDeviationPrice;
+        }
+
+        public void setbDeviationPrice(BigDecimal bDeviationPrice) {
+            this.bDeviationPrice = bDeviationPrice;
+        }
+
+        public BigDecimal getbMaxPrice() {
+            return bMaxPrice;
+        }
+
+        public void setbMaxPrice(BigDecimal bMaxPrice) {
+            this.bMaxPrice = bMaxPrice;
+        }
+
+        public BigDecimal getbMinPrice() {
+            return bMinPrice;
+        }
+
+        public void setbMinPrice(BigDecimal bMinPrice) {
+            this.bMinPrice = bMinPrice;
+        }
+
+        public BigDecimal getPriceChangeSpeed() {
+            return priceChangeSpeed;
+        }
+
+        public void setPriceChangeSpeed(BigDecimal priceChangeSpeed) {
+            this.priceChangeSpeed = priceChangeSpeed;
+        }
+        
+        
+
     }
+    
+    public static class DateAdapter extends XmlAdapter<String, Date> {
+////04.06.2019 16:03:13.279
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss.SSS");
+
+    @Override
+    public String marshal(Date v) throws Exception {
+        synchronized (dateFormat) {
+            return dateFormat.format(v);
+        }
+    }
+
+    @Override
+    public Date unmarshal(String v) throws Exception {
+        synchronized (dateFormat) {
+            return dateFormat.parse(v);
+        }
+    }
+
+}
 
 }

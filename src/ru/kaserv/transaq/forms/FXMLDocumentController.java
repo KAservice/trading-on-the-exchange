@@ -10,12 +10,13 @@ package ru.kaserv.transaq.forms;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,17 +24,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import ru.kaserv.transaq.command.CommandBuilder;
 import ru.kaserv.transaq.configuration.ClientForTradesOrders;
 import ru.kaserv.transaq.configuration.ClientsForTradesOrders;
+import ru.kaserv.transaq.configuration.GlobalConfigSetting;
 import ru.kaserv.transaq.configuration.RemnantOfSecurities;
 import ru.kaserv.transaq.configuration.RemnantOfSecuritiesBuilder;
 import ru.kaserv.transaq.configuration.SecurityForTradesOrders;
 import ru.kaserv.transaq.configuration.StorageConfig;
+import ru.kaserv.transaq.object.Client;
 import ru.kaserv.transaq.object.Trades;
+import ru.kaserv.transaq.storage.ClientsStorage;
 import transaq.TransaqConnector;
 import transaq.TransaqHandler;
 import transaq.TransaqQueue;
@@ -44,12 +46,9 @@ import transaq.TransaqQueue;
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
-    private Label label;
-    @FXML
-    private Button button;
-    @FXML
-    private Button buttonUnInitialize;
+ 
+
+
     
     private TransaqQueue queue = new TransaqQueue();
     
@@ -58,28 +57,9 @@ public class FXMLDocumentController implements Initializable {
     Thread consumer;
     
     StorageConfig storageConfig = new StorageConfig();
-    
-    
-/*    ObservableList<Quotations.Quotation> quotationObList = FXCollections.observableArrayList();
-    ObservableList<Quotes.Quote> quoteObList = FXCollections.observableArrayList();
-    
-      
 
     
-    PortfolioTplus currencyPortfolioTplus = new PortfolioTplus();
-    
-
-   
- 
-    
-    @FXML
-    TableView candlekindTableView;
-    @FXML
-    private TableColumn<Candlekinds.Kind, String> columnCandlekindTableViewId;
-    @FXML
-    private TableColumn<Candlekinds.Kind, String> columnCandlekindTableViewPeriod;  
-    @FXML
-    private TableColumn<Candlekinds.Kind, String> columnCandlekindTableViewName;   
+/* 
   
     
     
@@ -242,130 +222,22 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn<Orders.Stoporder, String> columnOrderTableViewStoporderTransactionid;   */
     
 
-    @FXML
-    private void handleButtonLoadDllAction(ActionEvent event) {   
-    JNICallTest();   
-        
-    
-    Object blockObject = new Object();
-    
-    
-    
-    transaqConnector = new TransaqConnector();
-    transaqConnector.LoadDllTransaq();
-    transaqConnector.SetCallback();
-    transaqConnector.setQueue(queue);
-    transaqConnector.setBlockObject(blockObject);
-    String logPath="D:\\trading-on-the-exchange\\Transaq\\Output\\Log\\"; 
-    
-    
-    byte[] b=logPath.getBytes();
-    transaqConnector.Initialize(b, 3);
-    
-    
-    
-    
-    
-        
-        transaqHandler = new TransaqHandler();
-        transaqHandler.setBlockObject(blockObject);
-        consumer = new Thread(transaqHandler);
-        transaqHandler.setQueue(queue);
-        consumer.setName("Consumer");
-        System.out.println("Запусаем поток, текущий поток:" + Thread.currentThread().getName()); 
-
-        
-        
-      /*  transaqHandler.boardObList = boardObList;
-        transaqHandler.candlekindObList = candlekindObList;
-        transaqHandler.quotationObList = quotationObList;
-        transaqHandler.quoteObList = quoteObList;*/
-//        transaqHandler.alltradeObList = alltradeObList;    
- 
-//        transaqHandler.tradeObList = tradeObList; 
-//        transaqHandler.orderObList = orderObList; 
-        consumer.start();
-    
-    
-    
-    
-    }
-    
-    @FXML
-    private void handleButtonUnLoadDllAction(ActionEvent event) {    
-        
-    transaqConnector.UnLoadDllTransaq();
-    
-    }    
-    
-    
-    @FXML
-    private void handleButtonInitializeAction(ActionEvent event) {     
-
- 
-    }
-    
-    @FXML
-    private void handleButtonUnInitializeAction(ActionEvent event) {   
-
-    transaqConnector.UnInitialize();
-    saveBalance();
-    }
-    
-    @FXML
-    private void handleButtonSetCallbackAction(ActionEvent event) {   
-
-    consumer.interrupt();
-    
-    
-    }
-    
-    @FXML
-    private void handleButtonConnectAction(ActionEvent event) {   
-
-    String z;
-
-//FZTC9650A  eBu5rDn2 tr1.finam.ru 3900   
-
-//TCNN9989 Q2S2q9 tr1-demo5.finam.ru 3939
 
 
-    System.out.println("Выполняем команду, текущий поток:" + Thread.currentThread().getName());     
-        
-    z= "	<command id=\"connect\">                                                        "+
-				"<login>FZTC9650A</login>                                                "+
-				"<password>eBu5rDn2</password>                                    "+
-				"<host>tr1.finam.ru</host>                                            "+
-				"<port>3900</port>                                              "+
-				"<language>ru</language>                                        "+
-				"<autopos>false</autopos>                                        "+
-				"<micex_registers>true</micex_registers>                        "+
-				"<milliseconds>true</milliseconds>                              "+
-				"<utc_time>true</utc_time>                                      "+
-				"<rqdelay>100</rqdelay>                         "+
-				"<session_timeout>25</session_timeout>       "+
-				"<request_timeout>10                       "+
-				"</request_timeout>                                                    "+
-				"<push_u_limits>10</push_u_limits>                      "+
-				"<push_pos_equity>10</push_pos_equity>                  "+
-				"</command>     ";
-    byte[] b=z.getBytes();
-    transaqConnector.SendCommand(b);
-    
-    }
-    
-    @FXML
-    private void handleButtonDisconnectAction(ActionEvent event) {   
-
-    String z=	"<command id=\"disconnect\"/>";
-
-    byte[] b=z.getBytes();
-    transaqConnector.SendCommand(b); 
-    
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+   
+        
+        if (GlobalConfigSetting.testRegime == true){
+            Client client = new Client();
+            client.setId(GlobalConfigSetting.client);
+            
+            
+            ClientsStorage cs = StorageConfig.getStorageConfig().getClientsStorageConfig().getClientsStorage();                    
+            cs.add(client);
+        }
         
     /*    columnShortName.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("shortname"));
         columnSecTz.setCellValueFactory(new PropertyValueFactory<Securities.Security, String>("secTz"));    
@@ -602,143 +474,13 @@ public class FXMLDocumentController implements Initializable {
         }
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-    
-    
-    
-    
-    
-    @FXML
-    private void handleButtonSubscribeAction(ActionEvent event) { 
-         String z;
 
-//BRK9   
-    
-    
-            z="<command id=\"subscribe\">"+
-                    
-                "<alltrades>"+
-                "<security>"+
-                "<board>FUT</board>"+
-                "<seccode>BRN9</seccode>"+
-                "</security>"+
-                "</alltrades>"+
-                                        
-
-                "</command>";
-    byte[] b=z.getBytes();
-    transaqConnector.SendCommand(b);   
-    }
-    
-    
-        @FXML
-    private void handleButtonUnSubscribeAction(ActionEvent event) { 
-         String z;
-
-
-    
-    
-            z="<command id=\"unsubscribe\">"+
-                    
-                "<alltrades>"+
-                "<security>"+
-                "<board>FUT</board>"+
-                "<seccode>BRN9</seccode>"+
-                "</security>"+
-                "</alltrades>"+
-                    
-
-                    
-
-                "</command>";
-    byte[] b=z.getBytes();
-    transaqConnector.SendCommand(b);   
-    }
-    
-    
-    @FXML
-    private void handleButtonGetHistoryDataAction(ActionEvent event) { 
-         String z;    
-            z="    <command id=\"gethistorydata\">"+
-                "<security>"+
-                "<board>FUT</board>"+
-                "<seccode>BRM9</seccode>"+
-                "</security>"+
-                "<period>2</period>"+
-                "<count>20</count>"+
-                "<reset>true</reset>"+
-                "</command>";
-                    
-        byte[] b=z.getBytes();
-        transaqConnector.SendCommand(b);
-
-        }
-    
-    
-    @FXML
-    private void handleButtonGetPortfolioAction(ActionEvent event) { 
-         String z;
-         
-            z="<command id=\"get_portfolio\" client=\"virt/9989\"/>";//12E19/12E19
-            
-                    
-        byte[] b=z.getBytes();
-        transaqConnector.SendCommand(b);
-
-        }
-    
-    @FXML
-    private void handleButtonGetMaxBuySellTplusAction(ActionEvent event) { 
-         String z;
-         
-            z="<command id=\"get_max_buy_sell_tplus\" client=\"код клиента\">\n" +
-                    "<security>\n" +
-                    "<market>Внутренний код рынка</market>\n" +
-                    "<seccode>BRM9</seccode>\n" +
-                    "</security>\n" +
-                    "</command>";
-            
-                    
-        byte[] b=z.getBytes();
-        transaqConnector.SendCommand(b);
-        }
-    
-    
-    @FXML
-    private void handleButtonGetgetUnitedEquityAction(ActionEvent event) { 
-         String z;
-         
-            z="<command id=\"get_united_portfolio\" client=\"код клиента\" union=\"код юниона\" />";            
-                    
-        byte[] b=z.getBytes();
-        transaqConnector.SendCommand(b);
-        }    
-    
-    
-    @FXML
-    private void handleButtonGetUnitedPortfolioAction(ActionEvent event) { 
-         String z;
-         
-            z="<command id=\"get_united_equity\" union=\"код юниона\" />";            
-                    
-        byte[] b=z.getBytes();
-        transaqConnector.SendCommand(b);
-        }     
-    
-    @FXML
-    private void handleButtonGetUnitedGoAction(ActionEvent event) { 
-         String z;
-         
-            z="<command id=\"get_united_go\" union=\"код юниона\" />";            
-                    
-        byte[] b=z.getBytes();
-        transaqConnector.SendCommand(b);
-        }     
-    
     
     @FXML
     private void handleMainMenuOpenTableClientsForTradesOrders(ActionEvent event) { 
                
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Клиенты для заявок и сделок");
         Parent root = null;          
    
             try {
@@ -756,7 +498,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleMainMenuOpenTableSecuritiesForAllTrades(ActionEvent event) { 
                
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage();
+        newWindow.setTitle("Инструменты для всех сделок: ");
         Parent root = null;          
    
             try {
@@ -793,7 +536,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleMainMenuOpenTableClients(ActionEvent event) { 
                
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Клиенты");
+        
         Parent root = null;          
    
             try {
@@ -811,7 +556,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleMainMenuOpenTableSecurities(ActionEvent event) { 
                
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Инструменты");
         Parent root = null;          
    
             try {
@@ -827,15 +573,13 @@ public class FXMLDocumentController implements Initializable {
         }    
     
     @FXML
-    private void handleMainMenuConnectToServer(ActionEvent event) { 
+    private void handleMainMenuConnectToServer(ActionEvent event){ 
                
     JNICallTest();   
         
     
     Object blockObject = new Object();
-    
-    
-    
+
     transaqConnector = new TransaqConnector();
     transaqConnector.LoadDllTransaq();
     transaqConnector.SetCallback();
@@ -846,11 +590,13 @@ public class FXMLDocumentController implements Initializable {
     byte[] b=logPath.getBytes();
     transaqConnector.Initialize(b, 3);
     
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
-    
-    
-    
-        
+
         transaqHandler = new TransaqHandler();
         transaqHandler.setBlockObject(blockObject);
         consumer = new Thread(transaqHandler);
@@ -865,30 +611,12 @@ public class FXMLDocumentController implements Initializable {
         
             String z;
 
-//FZTC9650A  eBu5rDn2 tr1.finam.ru 3900   
 
-//TCNN9989 Q2S2q9 tr1-demo5.finam.ru 3939
 
 
     System.out.println("Выполняем команду, текущий поток:" + Thread.currentThread().getName());     
         
-    z= "	<command id=\"connect\">                                                        "+
-				"<login>FZTC9650A</login>                                                "+
-				"<password>eBu5rDn2</password>                                    "+
-				"<host>tr1.finam.ru</host>                                            "+
-				"<port>3900</port>                                              "+
-				"<language>ru</language>                                        "+
-				"<autopos>false</autopos>                                        "+
-				"<micex_registers>true</micex_registers>                        "+
-				"<milliseconds>true</milliseconds>                              "+
-				"<utc_time>true</utc_time>                                      "+
-				"<rqdelay>100</rqdelay>                         "+
-				"<session_timeout>25</session_timeout>       "+
-				"<request_timeout>10                       "+
-				"</request_timeout>                                                    "+
-				"<push_u_limits>10</push_u_limits>                      "+
-				"<push_pos_equity>10</push_pos_equity>                  "+
-				"</command>     ";
+
     
     CommandBuilder cb = new CommandBuilder();
     String command = cb.createCommandConnect();
@@ -907,8 +635,17 @@ public class FXMLDocumentController implements Initializable {
         
         String z=	"<command id=\"disconnect\"/>";
 
-    byte[] b=z.getBytes();
-    transaqConnector.SendCommand(b); 
+        byte[] b=z.getBytes();
+        transaqConnector.SendCommand(b); 
+        
+        saveBalance();
+
+        consumer.interrupt();
+
+        transaqConnector.UnInitialize();
+        
+
+        transaqConnector.UnLoadDllTransaq();
 
 //после этого должны получить асинхронный ответ disconnect    
         
@@ -918,7 +655,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleMainMenuOpenConfigConnect(ActionEvent event) {     
         
-        Stage newWindow = new Stage();    
+        Stage newWindow = new Stage(); 
+        newWindow.setTitle("Параметры подключения к серверу Transaq");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ConnectConfigForm.fxml"));
         Parent root = null;
    
@@ -988,5 +726,47 @@ public class FXMLDocumentController implements Initializable {
     builder.save(remnants);
     }
     
+    
+    @FXML
+    private void handleMainMenuOpenTableSecuritiesForCandles(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();
+        newWindow.setTitle("Инструменты для свечей");
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("SecuritiesForCandlesForm.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }
+    
+
+
+
+
+    @FXML
+    private void handleMainMenuOpenTableCandlekinds(ActionEvent event) { 
+               
+        Stage newWindow = new Stage();
+        newWindow.setTitle("Периоды для свечей");
+        Parent root = null;          
+   
+            try {
+                root = FXMLLoader.load(getClass().getResource("CandlekindsForm.fxml"));        
+            }
+            catch (IOException err){
+                System.out.println("ошибка " + err);
+                err.printStackTrace();    
+            }
+        Scene scene = new Scene(root);        
+        newWindow.setScene(scene);
+        newWindow.show();
+        }
     
 }

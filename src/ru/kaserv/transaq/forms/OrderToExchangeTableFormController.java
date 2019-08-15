@@ -149,7 +149,7 @@ public class OrderToExchangeTableFormController implements Initializable {
     }  
     
     
-        public void setOrdersStorage(OrderToExchangeStorage ordersStorage) {
+    public void setOrdersStorage(OrderToExchangeStorage ordersStorage) {
         this.ordersStorage = ordersStorage;
         orderTableView.setItems(ordersStorage.getObservableList());
     }
@@ -171,10 +171,14 @@ public class OrderToExchangeTableFormController implements Initializable {
         
         CancelOrderCommand command =  new CancelOrderCommand();
         command.setTransactionid(order.getTransactionid());
-                
+        command.setClientId(order.getClient());
+        command.setBoard(order.getBoard());
+        command.setSeccode(order.getSeccode());
 
         CancelOrderCommandSender sender = new CancelOrderCommandSender();
         sender.sendCommand(command); 
+        
+        orderTableView.setItems(ordersStorage.getObservableList());
     }  
     
     
